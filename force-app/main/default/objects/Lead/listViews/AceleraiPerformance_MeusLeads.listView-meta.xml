@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AceleraiPerformance_MeusLeads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>012N4000001tXE6</value>
+    </filters>
+    <label>Aceleraí Performance - Meus Leads</label>
+    <sharedTo>
+        <allPartnerUsers></allPartnerUsers>
+        <group>AceleraiPerformance</group>
+        <role>System_Administrator</role>
+    </sharedTo>
+</ListView>

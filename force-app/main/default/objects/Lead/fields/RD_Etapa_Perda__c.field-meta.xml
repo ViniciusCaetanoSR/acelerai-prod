@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RD_Etapa_Perda__c</fullName>
+    <label>RD Etapa Perda</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Qualificação</fullName>
+                <default>false</default>
+                <label>Qualificação</label>
+            </value>
+            <value>
+                <fullName>3 Tentativa contato</fullName>
+                <default>false</default>
+                <label>3 Tentativa contato</label>
+            </value>
+            <value>
+                <fullName>2 Tentativa contato</fullName>
+                <default>false</default>
+                <label>2 Tentativa contato</label>
+            </value>
+            <value>
+                <fullName>Sem contato</fullName>
+                <default>false</default>
+                <label>Sem contato</label>
+            </value>
+            <value>
+                <fullName>1 Tentativa contato</fullName>
+                <default>false</default>
+                <label>1 Tentativa contato</label>
+            </value>
+            <value>
+                <fullName>Negociação Futura / Suspensa</fullName>
+                <default>false</default>
+                <label>Negociação Futura / Suspensa</label>
+            </value>
+            <value>
+                <fullName>Negociação / Follow Up</fullName>
+                <default>false</default>
+                <label>Negociação / Follow Up</label>
+            </value>
+            <value>
+                <fullName>Lead Qualificado</fullName>
+                <default>false</default>
+                <label>Lead Qualificado</label>
+            </value>
+            <value>
+                <fullName>Negociação / Follow Up Campanhas e Peças</fullName>
+                <default>false</default>
+                <label>Negociação / Follow Up Campanhas e Peças</label>
+            </value>
+            <value>
+                <fullName>Negociação / Follow Up Direito de Imagem</fullName>
+                <default>false</default>
+                <label>Negociação / Follow Up Direito de Imagem</label>
+            </value>
+            <value>
+                <fullName>Venda Fechada</fullName>
+                <default>false</default>
+                <label>Venda Fechada</label>
+            </value>
+            <value>
+                <fullName>Negociação Fechada Campanhas e Peças</fullName>
+                <default>false</default>
+                <label>Negociação Fechada Campanhas e Peças</label>
+            </value>
+            <value>
+                <fullName>Venda Fechada Campanhas e Peças</fullName>
+                <default>false</default>
+                <label>Venda Fechada Campanhas e Peças</label>
+            </value>
+            <value>
+                <fullName>Venda Fechada Direito de Imagem</fullName>
+                <default>false</default>
+                <label>Venda Fechada Direito de Imagem</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lista_Area_Dados_Fabio</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Funil__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Motivo_da_Perda__c</columns>
+    <columns>CnpjNumeros__c</columns>
+    <columns>Media__c</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>UTM_Medium__c</columns>
+    <columns>UTM_Source__c</columns>
+    <columns>UTM_Term__c</columns>
+    <columns>Tipo__c</columns>
+    <columns>referencia_base_antiga_lead__c</columns>
+    <columns>Website__c</columns>
+    <columns>Contato_BotSGC__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Lista Area Dados - Fabio</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

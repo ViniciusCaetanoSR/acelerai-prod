@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompanyAge__c</fullName>
+    <label>Há quanto tempo existe a empresa?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Menos de 1 ano</fullName>
+                <default>false</default>
+                <label>Menos de 1 ano</label>
+            </value>
+            <value>
+                <fullName>1 a 3 anos</fullName>
+                <default>false</default>
+                <label>1 a 3 anos</label>
+            </value>
+            <value>
+                <fullName>3 a 5 anos</fullName>
+                <default>false</default>
+                <label>3 a 5 anos</label>
+            </value>
+            <value>
+                <fullName>Mais de 5 anos</fullName>
+                <default>false</default>
+                <label>Mais de 5 anos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

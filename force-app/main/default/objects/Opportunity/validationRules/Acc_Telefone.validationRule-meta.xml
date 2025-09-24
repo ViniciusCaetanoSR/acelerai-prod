@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acc_Telefone</fullName>
+    <active>false</active>
+    <description>Torna o campo &quot;Telefone&quot; obrigatório a partir de &quot;Em negociação&quot;</description>
+    <errorConditionFormula>ISPICKVAL(StageName, &apos;Em Negociação&apos;) &amp;&amp;
+ISBLANK(Account.Phone)</errorConditionFormula>
+    <errorMessage>Preencha o campo &quot;Telefone/Phone&quot; no objeto Conta quando chegar na etapa &quot;Em negociação&quot;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contato_BotSGC__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo será marcado sempre que um lead for enviado para o SGC e o contato com o cliente seja feito via BOT, possibilitando filtrá-lo em Listviews e Relatórios específicos e retirando duplicidade de ativação do Lead (contato BOT + Vendedor)</description>
+    <label>Contato Bot SGC</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

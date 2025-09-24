@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FilterFieldValue3__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Utilize para filtrar por algum valor do campo colocado em &quot;Filtrar por Campo 1&quot;. 
+Se o valor for uma data, use o formato: dd/mm/aaaa.
+Em data, é possível usar os operadores: &quot;&lt;=&quot;, &quot;&gt;=&quot;, &quot;=&quot;, &quot;!=&quot;, &quot;&lt;&quot;, &quot;&gt;&quot;. Exemplo: &lt;=01/01/2025.
+Em texto ou booleano, é possível usar o operador &quot;!=&quot;. Exemplo: !=Ganho</inlineHelpText>
+    <label>Valor do Campo 3</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Varejo_Tradicional</fullName>
+    <active>true</active>
+    <businessProcess>Varejo Tradicional</businessProcess>
+    <label>Varejo Tradicional</label>
+    <picklistValues>
+        <picklist>CompanyAge__c</picklist>
+        <values>
+            <fullName>1 a 3 anos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 a 5 anos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 5 anos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Menos de 1 ano</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CompanyUF__c</picklist>
+        <values>
+            <fullName>AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EmployeesAmount__c</picklist>
+        <values>
+            <fullName>01 - 05</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 - 20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 - 50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 - 100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 100</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Funil__c</picklist>
+        <values>
+            <fullName>Varejo Tradicional</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GenderIdentity</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nonbinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HasAgencyCurrently__c</picklist>
+        <values>
+            <fullName>Minha empresa é uma Agência</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HasBeenAdvertiser__c</picklist>
+        <values>
+            <fullName>Não</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim%2C apenas mídia off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim%2C apenas mídia on</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim%2C os dois</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IntendedAnnouncement__c</picklist>
+        <values>
+            <fullName>Entre 1 e 3 meses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imediatamente</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 3 meses</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Media_Monthly_Investment__c</picklist>
+        <values>
+            <fullName>Entre 1k - 3k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 30k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não invisto</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MonthlyBilling__c</picklist>
+        <values>
+            <fullName>Acima de  R%24 300 mil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Até R%24 30 mil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entre  R%24 100%2E001 e  R%24 300 mil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entre R%24 30%2E001 e  R%24 100 mil</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pronouns</picklist>
+        <values>
+            <fullName>He%2FHim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>He%2FThey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Listed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FHer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FThey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>They%2FThem</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RD_Etapa_Perda__c</picklist>
+        <values>
+            <fullName>1 Tentativa contato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 Tentativa contato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Tentativa contato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Qualificado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negociação %2F Follow Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negociação %2F Follow Up Campanhas e Peças</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negociação %2F Follow Up Direito de Imagem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negociação Fechada Campanhas e Peças</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negociação Futura %2F Suspensa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualificação</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sem contato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venda Fechada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venda Fechada Campanhas e Peças</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venda Fechada Direito de Imagem</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RD_Motivo_Perda__c</picklist>
+        <values>
+            <fullName>Achou produto caro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assédio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Milionária - curioso ou não tem perfil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Milionária - perseguidor de prêmios</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bloqueio artista região</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bloqueio artista segmento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bloqueio do produto para o segmento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bloqueio estrela região</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bloqueio estrela segmento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cliente com contrato cancelado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cliente declinou mídia previamente</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cliente já faz mídia com agência homologada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cliente já faz mídia com outra agência</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Curioso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dados de contato inválidos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estrela reprovou a campanha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estrela reprovou a venda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead V4 - será atendido pelo franqueado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead duplicado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MÍDIA - segmento não elegível</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não está no momento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não faz propaganda nos meios e peças atendidas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não gostou do produto%2Fserviço</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não tem CNPJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não viu valor para o seu segmento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produto não funciona para seu segmento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPESCAGEM - Tentativas de contato sem sucesso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REPESCAGEM 2 - Tentativas de contato sem sucesso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sem interesse pelo produto%2Fserviço</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sem recurso financeiro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sem redes sociais</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sem retorno dos contatos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sem retorno no follow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tentativas de contato sem sucesso</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role_at_company__c</picklist>
+        <values>
+            <fullName>Analista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coordenador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diretor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estagiário</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundador%2FSócio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gerente</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Segmento__c</picklist>
+        <values>
+            <fullName>Agronegócio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alimentar%28Mercado%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aplicativos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apostas%2F Bets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Associações</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotivo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bares E Restaurantes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calçados</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casa E Decoração</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Centro Comercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comunicação</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construção</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Educação</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eletro E Móveis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entretenimento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estética E Beleza</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farmácia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financeiro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imobiliário</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indústria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marítimo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outros</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panificação E Confeitaria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profissionais Liberais</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provedor De Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saúde E Bem Estar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Segurança</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seguro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serviços</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serviços Funerários</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tecnologia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transporte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turismo E Hospedagem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Varejo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Varejo Departamento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Varejo Especializado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Óticas</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>referencia_base_antiga_lead__c</picklist>
+        <values>
+            <fullName>Antigo sem contato e tentativa de contato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Base Inativa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

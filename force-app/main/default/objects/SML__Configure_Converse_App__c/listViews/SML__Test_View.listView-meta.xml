@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SML__Test_View</fullName>
+    <columns>NAME</columns>
+    <columns>SML__Status__c</columns>
+    <columns>SML__Converse_App__c</columns>
+    <columns>OBJECT_ID</columns>
+    <filterScope>Mine</filterScope>
+    <label>Test View</label>
+</ListView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_Monthly_Investment__c</fullName>
+    <label>Investimento mensal em Mídia/Conteúdo</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Não invisto</fullName>
+                <default>false</default>
+                <label>Não invisto</label>
+            </value>
+            <value>
+                <fullName>Entre 1k - 3k</fullName>
+                <default>false</default>
+                <label>Entre 1k - 3k</label>
+            </value>
+            <value>
+                <fullName>Entre 4k - 10k</fullName>
+                <default>false</default>
+                <label>Entre 4k - 10k</label>
+            </value>
+            <value>
+                <fullName>Entre 11k - 30k</fullName>
+                <default>false</default>
+                <label>Entre 11k - 30k</label>
+            </value>
+            <value>
+                <fullName>Mais de 30k</fullName>
+                <default>false</default>
+                <label>Mais de 30k</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

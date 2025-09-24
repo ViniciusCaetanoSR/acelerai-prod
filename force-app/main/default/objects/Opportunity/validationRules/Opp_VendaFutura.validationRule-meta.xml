@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_VendaFutura</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(StageName, &apos;Venda Futura&apos;) &amp;&amp; CotacaoVendaFutura__c &lt;= 0 &amp;&amp; RecordType.DeveloperName == &apos;Varejo&apos;</errorConditionFormula>
+    <errorMessage>Para selecionar esse estágio é necessário que a oportunidade tenha uma cotação com venda futura</errorMessage>
+</ValidationRule>

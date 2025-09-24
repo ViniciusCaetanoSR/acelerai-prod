@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Veiculacao__c</fullName>
+    <label>Veiculação</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mídia On</fullName>
+                <default>false</default>
+                <label>Mídia On</label>
+            </value>
+            <value>
+                <fullName>TV</fullName>
+                <default>false</default>
+                <label>TV</label>
+            </value>
+            <value>
+                <fullName>Rádio</fullName>
+                <default>false</default>
+                <label>Rádio</label>
+            </value>
+            <value>
+                <fullName>OOH</fullName>
+                <default>false</default>
+                <label>OOH</label>
+            </value>
+            <value>
+                <fullName>Mídia Off</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mídia Off</label>
+            </value>
+            <value>
+                <fullName>Veiculação - RD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Veiculação - RD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

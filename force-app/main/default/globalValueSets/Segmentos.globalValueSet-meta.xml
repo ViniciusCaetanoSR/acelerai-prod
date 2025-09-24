@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agronegócio</fullName>
+        <default>false</default>
+        <label>Agronegócio</label>
+    </customValue>
+    <customValue>
+        <fullName>Alimentar(Mercado)</fullName>
+        <default>false</default>
+        <label>Alimentar(Mercado)</label>
+    </customValue>
+    <customValue>
+        <fullName>Aplicativos</fullName>
+        <default>false</default>
+        <label>Aplicativos</label>
+    </customValue>
+    <customValue>
+        <fullName>Apostas/ Bets</fullName>
+        <default>false</default>
+        <label>Apostas/ Bets</label>
+    </customValue>
+    <customValue>
+        <fullName>Associações</fullName>
+        <default>false</default>
+        <label>Associações</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotivo</fullName>
+        <default>false</default>
+        <label>Automotivo</label>
+    </customValue>
+    <customValue>
+        <fullName>Bares E Restaurantes</fullName>
+        <default>false</default>
+        <label>Bares E Restaurantes</label>
+    </customValue>
+    <customValue>
+        <fullName>Calçados</fullName>
+        <default>false</default>
+        <label>Calçados</label>
+    </customValue>
+    <customValue>
+        <fullName>Casa E Decoração</fullName>
+        <default>false</default>
+        <label>Casa E Decoração</label>
+    </customValue>
+    <customValue>
+        <fullName>Centro Comercial</fullName>
+        <default>false</default>
+        <label>Centro Comercial</label>
+    </customValue>
+    <customValue>
+        <fullName>Comunicação</fullName>
+        <default>false</default>
+        <label>Comunicação</label>
+    </customValue>
+    <customValue>
+        <fullName>Construção</fullName>
+        <default>false</default>
+        <label>Construção</label>
+    </customValue>
+    <customValue>
+        <fullName>Educação</fullName>
+        <default>false</default>
+        <label>Educação</label>
+    </customValue>
+    <customValue>
+        <fullName>Eletro E Móveis</fullName>
+        <default>false</default>
+        <label>Eletro E Móveis</label>
+    </customValue>
+    <customValue>
+        <fullName>Energia</fullName>
+        <default>false</default>
+        <label>Energia</label>
+    </customValue>
+    <customValue>
+        <fullName>Entretenimento</fullName>
+        <default>false</default>
+        <label>Entretenimento</label>
+    </customValue>
+    <customValue>
+        <fullName>Estética E Beleza</fullName>
+        <default>false</default>
+        <label>Estética E Beleza</label>
+    </customValue>
+    <customValue>
+        <fullName>Farmácia</fullName>
+        <default>false</default>
+        <label>Farmácia</label>
+    </customValue>
+    <customValue>
+        <fullName>Financeiro</fullName>
+        <default>false</default>
+        <label>Financeiro</label>
+    </customValue>
+    <customValue>
+        <fullName>Imobiliário</fullName>
+        <default>false</default>
+        <label>Imobiliário</label>
+    </customValue>
+    <customValue>
+        <fullName>Marítimo</fullName>
+        <default>false</default>
+        <label>Marítimo</label>
+    </customValue>
+    <customValue>
+        <fullName>Medicina</fullName>
+        <default>false</default>
+        <label>Medicina</label>
+    </customValue>
+    <customValue>
+        <fullName>Moda</fullName>
+        <default>false</default>
+        <label>Moda</label>
+    </customValue>
+    <customValue>
+        <fullName>Óticas</fullName>
+        <default>false</default>
+        <label>Óticas</label>
+    </customValue>
+    <customValue>
+        <fullName>Outros</fullName>
+        <default>false</default>
+        <label>Outros</label>
+    </customValue>
+    <customValue>
+        <fullName>Panificação E Confeitaria</fullName>
+        <default>false</default>
+        <label>Panificação E Confeitaria</label>
+    </customValue>
+    <customValue>
+        <fullName>Pets</fullName>
+        <default>false</default>
+        <label>Pets</label>
+    </customValue>
+    <customValue>
+        <fullName>Profissionais Liberais</fullName>
+        <default>false</default>
+        <label>Profissionais Liberais</label>
+    </customValue>
+    <customValue>
+        <fullName>Provedor De Internet</fullName>
+        <default>false</default>
+        <label>Provedor De Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Saúde E Bem Estar</fullName>
+        <default>false</default>
+        <label>Saúde E Bem Estar</label>
+    </customValue>
+    <customValue>
+        <fullName>Segurança</fullName>
+        <default>false</default>
+        <label>Segurança</label>
+    </customValue>
+    <customValue>
+        <fullName>Seguro</fullName>
+        <default>false</default>
+        <label>Seguro</label>
+    </customValue>
+    <customValue>
+        <fullName>Serviços</fullName>
+        <default>false</default>
+        <label>Serviços</label>
+    </customValue>
+    <customValue>
+        <fullName>Tecnologia</fullName>
+        <default>false</default>
+        <label>Tecnologia</label>
+    </customValue>
+    <customValue>
+        <fullName>Transporte</fullName>
+        <default>false</default>
+        <label>Transporte</label>
+    </customValue>
+    <customValue>
+        <fullName>Turismo E Hospedagem</fullName>
+        <default>false</default>
+        <label>Turismo E Hospedagem</label>
+    </customValue>
+    <customValue>
+        <fullName>Varejo Departamento</fullName>
+        <default>false</default>
+        <label>Varejo Departamento</label>
+    </customValue>
+    <customValue>
+        <fullName>Varejo Especializado</fullName>
+        <default>false</default>
+        <label>Varejo Especializado</label>
+    </customValue>
+    <customValue>
+        <fullName>Serviços Funerários</fullName>
+        <default>false</default>
+        <label>Serviços Funerários</label>
+    </customValue>
+    <customValue>
+        <fullName>Indústria</fullName>
+        <default>false</default>
+        <label>Indústria</label>
+    </customValue>
+    <customValue>
+        <fullName>Varejo</fullName>
+        <default>false</default>
+        <label>Varejo</label>
+    </customValue>
+    <customValue>
+        <fullName>-- Nenhum --</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>-- Nenhum --</label>
+    </customValue>
+    <description>Lista de Segmentos - Aceleraí</description>
+    <masterLabel>Segmentos</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

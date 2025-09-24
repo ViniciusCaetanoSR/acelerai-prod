@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClonedWithMediaSBT__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Esse campo é utilizado no método cloneOpportunityWithSBT() e no handleBeforeClone() como um marcador, para assegurar que o campo Media__c possa ser preenchido como &apos;&apos;sbt&apos;&apos; durante a clonagem para Varejo SBT.</description>
+    <label>Clone com Mídia SBT</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

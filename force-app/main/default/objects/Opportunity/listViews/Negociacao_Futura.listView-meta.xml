@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negociacao_Futura</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Referencia_base_antiga__c</field>
+        <operation>equals</operation>
+        <value>Base_Ativa_Negociacao_Futura</value>
+    </filters>
+    <filters>
+        <field>Novo_Tipo__c</field>
+        <operation>equals</operation>
+        <value>Negociação Futura</value>
+    </filters>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <filters>
+        <field>Media__c</field>
+        <operation>notEqual</operation>
+        <value>sbt</value>
+    </filters>
+    <filters>
+        <field>Novo_Tipo__c</field>
+        <operation>notEqual</operation>
+        <value>Renovação/Upsell base RD</value>
+    </filters>
+    <label>[VAREJO] Negociação Futura</label>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nitzap</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.ACTIVE</columns>
+    <columns>nitzap20__WhatsAppId__c</columns>
+    <columns>nitzap20__Connected__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>nitzap20__WhatsAppId__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Nitzap</label>
+</ListView>

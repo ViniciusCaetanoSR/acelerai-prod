@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MarketingContactName__c</fullName>
+    <description>Nome do responsável pela interface com a produação de campanhas.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Nome do responsável pela interface com a produação de campanhas.</inlineHelpText>
+    <label>Nome do contato de marketing</label>
+    <length>150</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

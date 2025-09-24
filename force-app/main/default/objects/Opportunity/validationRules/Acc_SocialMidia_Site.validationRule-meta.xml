@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acc_SocialMidia_Site</fullName>
+    <active>false</active>
+    <description>Preencha o campo Mídia Social ou Site no Objeto Conta.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(StageName, &quot;Em Negociação&quot;),
+ISBLANK( Account.SocialMedia_website__c )
+)</errorConditionFormula>
+    <errorMessage>Preencha o campo &quot;Mídia Social&quot; no objeto Conta quando chegar na etapa &quot;Em negociação&quot;.</errorMessage>
+</ValidationRule>

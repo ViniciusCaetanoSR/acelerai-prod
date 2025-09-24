@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>nitzap20__Nitzap_Task__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>if( 
+   ( not isnull( nitzap20__DateTime_Schedule_Message__c ) || not isnull(  nitzap20__Date_Time_Start_Chat__c  ) ) , 
+
+true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Nitzap Task</label>
+    <type>Checkbox</type>
+</CustomField>

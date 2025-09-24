@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RD_Motivo_Perda__c</fullName>
+    <label>RD Motivo Perda</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Produto não funciona para seu segmento</fullName>
+                <default>false</default>
+                <label>Produto não funciona para seu segmento</label>
+            </value>
+            <value>
+                <fullName>Sem retorno dos contatos</fullName>
+                <default>false</default>
+                <label>Sem retorno dos contatos</label>
+            </value>
+            <value>
+                <fullName>Tentativas de contato sem sucesso</fullName>
+                <default>false</default>
+                <label>Tentativas de contato sem sucesso</label>
+            </value>
+            <value>
+                <fullName>Sem retorno no follow</fullName>
+                <default>false</default>
+                <label>Sem retorno no follow</label>
+            </value>
+            <value>
+                <fullName>Não está no momento</fullName>
+                <default>false</default>
+                <label>Não está no momento</label>
+            </value>
+            <value>
+                <fullName>Sem recurso financeiro</fullName>
+                <default>false</default>
+                <label>Sem recurso financeiro</label>
+            </value>
+            <value>
+                <fullName>Lead duplicado</fullName>
+                <default>false</default>
+                <label>Lead duplicado</label>
+            </value>
+            <value>
+                <fullName>Sem interesse pelo produto/serviço</fullName>
+                <default>false</default>
+                <label>Sem interesse pelo produto/serviço</label>
+            </value>
+            <value>
+                <fullName>Curioso</fullName>
+                <default>false</default>
+                <label>Curioso</label>
+            </value>
+            <value>
+                <fullName>Bloqueio do produto para o segmento</fullName>
+                <default>false</default>
+                <label>Bloqueio do produto para o segmento</label>
+            </value>
+            <value>
+                <fullName>Achou produto caro</fullName>
+                <default>false</default>
+                <label>Achou produto caro</label>
+            </value>
+            <value>
+                <fullName>Não tem CNPJ</fullName>
+                <default>false</default>
+                <label>Não tem CNPJ</label>
+            </value>
+            <value>
+                <fullName>Dados de contato inválidos</fullName>
+                <default>false</default>
+                <label>Dados de contato inválidos</label>
+            </value>
+            <value>
+                <fullName>Sem redes sociais</fullName>
+                <default>false</default>
+                <label>Sem redes sociais</label>
+            </value>
+            <value>
+                <fullName>Bloqueio estrela segmento</fullName>
+                <default>false</default>
+                <label>Bloqueio estrela segmento</label>
+            </value>
+            <value>
+                <fullName>Não faz propaganda nos meios e peças atendidas</fullName>
+                <default>false</default>
+                <label>Não faz propaganda nos meios e peças atendidas</label>
+            </value>
+            <value>
+                <fullName>Bloqueio estrela região</fullName>
+                <default>false</default>
+                <label>Bloqueio estrela região</label>
+            </value>
+            <value>
+                <fullName>Não gostou do produto/serviço</fullName>
+                <default>false</default>
+                <label>Não gostou do produto/serviço</label>
+            </value>
+            <value>
+                <fullName>Não viu valor para o seu segmento</fullName>
+                <default>false</default>
+                <label>Não viu valor para o seu segmento</label>
+            </value>
+            <value>
+                <fullName>Assédio</fullName>
+                <default>false</default>
+                <label>Assédio</label>
+            </value>
+            <value>
+                <fullName>Bloqueio artista segmento</fullName>
+                <default>false</default>
+                <label>Bloqueio artista segmento</label>
+            </value>
+            <value>
+                <fullName>Lead V4 - será atendido pelo franqueado</fullName>
+                <default>false</default>
+                <label>Lead V4 - será atendido pelo franqueado</label>
+            </value>
+            <value>
+                <fullName>Cliente com contrato cancelado</fullName>
+                <default>false</default>
+                <label>Cliente com contrato cancelado</label>
+            </value>
+            <value>
+                <fullName>Bloqueio artista região</fullName>
+                <default>false</default>
+                <label>Bloqueio artista região</label>
+            </value>
+            <value>
+                <fullName>REPESCAGEM - Tentativas de contato sem sucesso</fullName>
+                <default>false</default>
+                <label>REPESCAGEM - Tentativas de contato sem sucesso</label>
+            </value>
+            <value>
+                <fullName>Black Milionária - curioso ou não tem perfil</fullName>
+                <default>false</default>
+                <label>Black Milionária - curioso ou não tem perfil</label>
+            </value>
+            <value>
+                <fullName>Estrela reprovou a venda</fullName>
+                <default>false</default>
+                <label>Estrela reprovou a venda</label>
+            </value>
+            <value>
+                <fullName>Black Milionária - perseguidor de prêmios</fullName>
+                <default>false</default>
+                <label>Black Milionária - perseguidor de prêmios</label>
+            </value>
+            <value>
+                <fullName>MÍDIA - segmento não elegível</fullName>
+                <default>false</default>
+                <label>MÍDIA - segmento não elegível</label>
+            </value>
+            <value>
+                <fullName>Cliente já faz mídia com outra agência</fullName>
+                <default>false</default>
+                <label>Cliente já faz mídia com outra agência</label>
+            </value>
+            <value>
+                <fullName>Estrela reprovou a campanha</fullName>
+                <default>false</default>
+                <label>Estrela reprovou a campanha</label>
+            </value>
+            <value>
+                <fullName>REPESCAGEM 2 - Tentativas de contato sem sucesso</fullName>
+                <default>false</default>
+                <label>REPESCAGEM 2 - Tentativas de contato sem sucesso</label>
+            </value>
+            <value>
+                <fullName>Cliente já faz mídia com agência homologada</fullName>
+                <default>false</default>
+                <label>Cliente já faz mídia com agência homologada</label>
+            </value>
+            <value>
+                <fullName>Cliente declinou mídia previamente</fullName>
+                <default>false</default>
+                <label>Cliente declinou mídia previamente</label>
+            </value>
+            <value>
+                <fullName>[AJUSTE] LEADS VENDIDOS</fullName>
+                <default>false</default>
+                <label>[AJUSTE] LEADS VENDIDOS</label>
+            </value>
+            <value>
+                <fullName>Demora no follow</fullName>
+                <default>false</default>
+                <label>Demora no follow</label>
+            </value>
+            <value>
+                <fullName>Importado para o Sales Force - neg futura</fullName>
+                <default>false</default>
+                <label>Importado para o Sales Force - neg futura</label>
+            </value>
+            <value>
+                <fullName>Importado para o Sales Force - qualificação</fullName>
+                <default>false</default>
+                <label>Importado para o Sales Force - qualificação</label>
+            </value>
+            <value>
+                <fullName>Importado para o Sales Force - sem ctt</fullName>
+                <default>false</default>
+                <label>Importado para o Sales Force - sem ctt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lista_Area_de_Dados_Fabio_1</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Novo_Tipo__c</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>Funnel__c</columns>
+    <columns>Loss_Reason__c</columns>
+    <columns>Company__c</columns>
+    <columns>SaleType__c</columns>
+    <columns>Segmento__c</columns>
+    <columns>Tipo_de_cliente__c</columns>
+    <columns>CnpjNumeros__c</columns>
+    <columns>CompanyAge__c</columns>
+    <columns>Telefone1__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Lista Area de Dados - Fabio (1)</label>
+</ListView>

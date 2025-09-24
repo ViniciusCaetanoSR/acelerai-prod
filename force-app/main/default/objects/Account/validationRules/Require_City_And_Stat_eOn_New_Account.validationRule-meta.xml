@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_City_And_Stat_eOn_New_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW() &amp;&amp; OR(ISBLANK(BillingState), ISBLANK(BillingCity))</errorConditionFormula>
+    <errorMessage>Por favor, preencha a Cidade e Estado</errorMessage>
+</ValidationRule>

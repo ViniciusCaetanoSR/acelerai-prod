@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllOpenLeads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>Role_at_company__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>UTM_Campaign__c</columns>
+    <columns>UTM_Content__c</columns>
+    <columns>HasAgencyCurrently__c</columns>
+    <columns>WhatsYourInstagram__c</columns>
+    <columns>Website__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>notEqual</operation>
+        <value>Luis</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>notEqual</operation>
+        <value>Marcos</value>
+    </filters>
+    <filters>
+        <field>Contato_BotSGC__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Histórico,Perdido,Lead Score</value>
+    </filters>
+    <label>Todos os leads Abertos</label>
+    <sharedTo>
+        <roleAndSubordinates>Coordenador_de_Planejamento_Comercial</roleAndSubordinates>
+    </sharedTo>
+</ListView>

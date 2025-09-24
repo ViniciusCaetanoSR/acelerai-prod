@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lista_Area_de_Dados_Fabio</fullName>
+    <columns>Owner</columns>
+    <columns>OPPORTUNITY.OWNER</columns>
+    <columns>QUOTE.NAME</columns>
+    <columns>QUOTE.STATUS</columns>
+    <columns>QUOTE.SUBTOTAL</columns>
+    <columns>Valor_Final__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>QUOTE.TOTALPRICE</columns>
+    <columns>TotalAmount__c</columns>
+    <columns>NumeroProposta__c</columns>
+    <columns>ValorDesconto__c</columns>
+    <columns>DatadePagamento__c</columns>
+    <columns>Sincronizado__c</columns>
+    <columns>PaymentMethod__c</columns>
+    <columns>PagamentoFuturo__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Lista Area de Dados - Fabio</label>
+</ListView>

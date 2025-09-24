@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bonificacao_midia__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ação de bonificação de mídia do SBT a partir de uma venda de varejo</description>
+    <label>Bonificação Mídia</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

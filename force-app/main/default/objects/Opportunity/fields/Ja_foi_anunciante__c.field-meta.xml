@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ja_foi_anunciante__c</fullName>
+    <label>Ja foi anunciante?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Não</fullName>
+                <default>false</default>
+                <label>Não</label>
+            </value>
+            <value>
+                <fullName>Sim, apenas mídia on</fullName>
+                <default>false</default>
+                <label>Sim, apenas mídia on</label>
+            </value>
+            <value>
+                <fullName>Sim, apenas mídia off</fullName>
+                <default>false</default>
+                <label>Sim, apenas mídia off</label>
+            </value>
+            <value>
+                <fullName>Sim, os dois</fullName>
+                <default>false</default>
+                <label>Sim, os dois</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

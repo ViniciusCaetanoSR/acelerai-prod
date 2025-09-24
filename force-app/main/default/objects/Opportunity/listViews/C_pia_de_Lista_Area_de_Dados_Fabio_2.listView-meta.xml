@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C_pia_de_Lista_Area_de_Dados_Fabio_2</fullName>
+    <columns>StateYourCompany__c</columns>
+    <columns>Referencia_base_antiga__c</columns>
+    <columns>Veiculacao__c</columns>
+    <columns>E_mail__c</columns>
+    <columns>Agencia__c</columns>
+    <columns>Cidade__c</columns>
+    <columns>Valor_final_da_venda__c</columns>
+    <columns>Media__c</columns>
+    <columns>Bonificacao_midia__c</columns>
+    <columns>Valor_Bonificacao_Midia__c</columns>
+    <columns>Pracas_Bonificacao_Midia__c</columns>
+    <columns>Venda_Reversa_Midia__c</columns>
+    <columns>ValorFinalMidia__c</columns>
+    <columns>Valor_Total_Neg_Fechada__c</columns>
+    <columns>Valor_m_dio_cota_es__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Lista Area de Dados - Fabio (2)</label>
+</ListView>

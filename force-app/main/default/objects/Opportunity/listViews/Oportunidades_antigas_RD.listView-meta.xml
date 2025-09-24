@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oportunidades_antigas_RD</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Referencia_base_antiga__c</columns>
+    <columns>ProposalSubmissionDates__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Referencia_base_antiga__c</field>
+        <operation>equals</operation>
+        <value>Base ativa em negociação</value>
+    </filters>
+    <label>Oportunidades em negociação RD</label>
+</ListView>

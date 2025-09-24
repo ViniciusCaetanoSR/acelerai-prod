@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Varejo</fullName>
+        <default>true</default>
+        <label>Varejo</label>
+    </customValue>
+    <customValue>
+        <fullName>Mídias Vendas</fullName>
+        <default>false</default>
+        <label>Mídias Vendas</label>
+    </customValue>
+    <customValue>
+        <fullName>Agências</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Agências</label>
+    </customValue>
+    <customValue>
+        <fullName>Reprospecção</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Reprospecção</label>
+    </customValue>
+    <customValue>
+        <fullName>Varejo Tradicional</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Varejo Tradicional</label>
+    </customValue>
+    <customValue>
+        <fullName>Produção</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Produção</label>
+    </customValue>
+    <masterLabel>Funil</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAREJO_Status_Reuni_o_Marcada</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Emaill__c</columns>
+    <columns>Telefone1__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>,Varejo</value>
+    </filters>
+    <filters>
+        <field>Media__c</field>
+        <operation>notEqual</operation>
+        <value>sbt</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Reunião Marcada</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Ganho RD</value>
+    </filters>
+    <label>[VAREJO] Status Reunião Marcada</label>
+</ListView>

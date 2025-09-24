@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposals_celebrities__c</fullName>
+    <description>Celebridades de todas as propostas enviadas</description>
+    <label>Celebridades das propostas</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Informação vem do SGC</fullName>
+                <default>false</default>
+                <label>Informação vem do SGC</label>
+            </value>
+            <value>
+                <fullName>Cauã Reymond</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cauã Reymond</label>
+            </value>
+            <value>
+                <fullName>Debora Secco</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Debora Secco</label>
+            </value>
+            <value>
+                <fullName>Giovanna Antonelli</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Giovanna Antonelli</label>
+            </value>
+            <value>
+                <fullName>Glória Pires</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Glória Pires</label>
+            </value>
+            <value>
+                <fullName>Jojo Todynho</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jojo Todynho</label>
+            </value>
+            <value>
+                <fullName>Juliana Paes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Juliana Paes</label>
+            </value>
+            <value>
+                <fullName>Rodrigo Faro</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rodrigo Faro</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

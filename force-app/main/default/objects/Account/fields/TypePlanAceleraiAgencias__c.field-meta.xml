@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TypePlanAceleraiAgencias__c</fullName>
+    <label>Tipo de plano Aceleraí Agências</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Plano 1</fullName>
+                <default>false</default>
+                <label>Plano 1</label>
+            </value>
+            <value>
+                <fullName>Plano 2</fullName>
+                <default>false</default>
+                <label>Plano 2</label>
+            </value>
+            <value>
+                <fullName>Plano 3</fullName>
+                <default>false</default>
+                <label>Plano 3</label>
+            </value>
+            <value>
+                <fullName>Plano 4</fullName>
+                <default>false</default>
+                <label>Plano 4</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

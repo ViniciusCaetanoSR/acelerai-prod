@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Venda_Reversa_Midia__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Venda reversa de mídia, onde os clientes indicados por empresas de mídias parceiras para venda de conteúdo</description>
+    <label>Venda Reversa Mídia</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

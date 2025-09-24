@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualifica_o</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Telefone1__c</columns>
+    <columns>Novo_Tipo__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>Emaill__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Qualificação</value>
+    </filters>
+    <filters>
+        <field>Media__c</field>
+        <operation>notEqual</operation>
+        <value>sbt</value>
+    </filters>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <label>[VAREJO] Qualificação</label>
+</ListView>

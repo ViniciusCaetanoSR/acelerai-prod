@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integracao_Falha</fullName>
+    <columns>NAME</columns>
+    <columns>IntegrationSource__c</columns>
+    <columns>StatusLog__c</columns>
+    <columns>StatusCode__c</columns>
+    <columns>RelatedRecord__c</columns>
+    <columns>MethodName__c</columns>
+    <columns>ResponseBody__c</columns>
+    <columns>User__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Log__c.Integration</value>
+    </filters>
+    <filters>
+        <field>StatusLog__c</field>
+        <operation>equals</operation>
+        <value>Falha</value>
+    </filters>
+    <filters>
+        <field>RelatedRecord__c</field>
+        <operation>startsWith</operation>
+        <value>00Q</value>
+    </filters>
+    <label>Logs de Integração - Falha</label>
+</ListView>

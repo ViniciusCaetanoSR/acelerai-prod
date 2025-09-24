@@ -1,0 +1,1 @@
+<html><head></head><body>Olá, {{{Recipient.FirstName}}} {{{Recipient.LastName}}},<br /><br />O caso nº {{{Case.CaseNumber}}} foi atribuído a você por {{{Sender.FirstName}}} {{{Sender.LastName}}}.<br /><br />Atenciosamente,<br /><br />Atendimento ao cliente da {{{Organization.Name}}}</body></html>

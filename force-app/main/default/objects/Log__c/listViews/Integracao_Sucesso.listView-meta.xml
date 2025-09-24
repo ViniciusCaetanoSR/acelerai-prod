@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integracao_Sucesso</fullName>
+    <columns>NAME</columns>
+    <columns>RelatedRecord__c</columns>
+    <columns>IntegrationSource__c</columns>
+    <columns>User__c</columns>
+    <columns>MethodName__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Log__c.Integration</value>
+    </filters>
+    <filters>
+        <field>StatusLog__c</field>
+        <operation>equals</operation>
+        <value>Sucesso</value>
+    </filters>
+    <label>Logs de Integração - Sucesso</label>
+</ListView>

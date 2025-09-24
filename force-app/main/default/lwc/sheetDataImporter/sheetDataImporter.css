@@ -1,0 +1,5 @@
+.custom-button {
+    --slds-c-button-brand-color-background: #c34f67;
+    --slds-c-button-brand-color-border: #c34f67;
+    --slds-c-button-brand-text-color: white; 
+}

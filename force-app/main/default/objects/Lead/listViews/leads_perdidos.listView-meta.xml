@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>leads_perdidos</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LastModifiedDate__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LeadId__c</columns>
+    <columns>LEAD.LAST_ACTIVITY</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Perdido</value>
+    </filters>
+    <filters>
+        <field>Contato_BotSGC__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Motivo_da_Perda__c</field>
+        <operation>notEqual</operation>
+        <value>Não tem CNPJ,Opt-out</value>
+    </filters>
+    <filters>
+        <field>LEAD.COMPANY</field>
+        <operation>notContain</operation>
+        <value>não</value>
+    </filters>
+    <label>Leads perdidos</label>
+</ListView>

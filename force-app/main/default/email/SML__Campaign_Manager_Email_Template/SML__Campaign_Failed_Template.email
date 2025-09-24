@@ -1,0 +1,108 @@
+<messaging:emailTemplate subject="Your Campaign Has been failed" recipientType="User" relatedToType="SML__Converse_Campaign__c">
+<messaging:htmlEmailBody >
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody style="font-family: 'Lato', sans-serif;">
+        <tr>
+            <td bgcolor="#2D9CDB" align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td align="center" style="padding:40px 10px 40px 10px">
+                                <a>
+                                    <img src="https://ci5.googleusercontent.com/proxy/AFt0Hjkql2H-OKiQ5-Chf7pndunmMHWUgxefklUFEnS0j6x24ByHqx8cS1CjMP3-WNksP5s=s0-d-e1-ft#http://sms-magic.in/images/sms.png" width="300" border="0" />
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#2D9CDB" align="center" style="padding:0px 10px 0px 10px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:700px;">
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#FFFFFF" align="center" style="padding:20px 20px 20px 20px;border-radius:10px 10px 0px 0px;box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#F4F4F4" align="center" style="padding:0px 10px 0px 10px">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:700px;background:#fff;">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <table width="100%" cellspacing="0" cellpadding="10" border="0" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);color: #888;padding: 0 25px;">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table width="100%" cellspacing="0" cellpadding="5" border="0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="left">
+                                                                <div style="font-size: 16px;color: #888;">Dear {!recipient.name},</div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left">
+                                                                <p style="padding-bottom:20px;color:#888;line-height: 30px;font-size: 16px;">Your <span style="color: #333; font-weight: 800;">{!relatedTo.Name}</span> campaign is <span style="color: #333; font-weight: 800;">Failed</span>. Here are the Details:</p>
+                                                                <div>
+                                                                    <p style="color: #333;font-size: 16px;width: 22%;display: inline-block;font-weight: 600;vertical-align: top;">Campaign Name :</p>
+                                                                    <p style="font-size: 16px;color: #333;width: 70%;display: inline-block;">{!relatedTo.name}</p>
+                                                                </div>
+                                                                <div>
+                                                                    <p style="color: #333;font-size: 16px;width: 22%;display: inline-block;font-weight: 600;vertical-align: top;">Date and Time :</p>
+                                                                    <p style="font-size: 16px;color: #333;width: 70%;display: inline-block;">{!relatedTo.Executed_Date_For_Email__c}</p>
+                                                                </div>
+                                                                <div>
+                                                                    <p style="color: #333;font-size: 16px;width: 22%;display: inline-block;font-weight: 600;vertical-align: top;">Status : </p>
+                                                                    <p style="font-size: 16px;color: #E02020;width: 70%;display: inline-block;">{!relatedTo.Status__c}</p>
+                                                                </div>
+                                                                <div>
+                                                                    <p style="font-size: 16px;color: #333;font-size: 16px;width: 22%;display: inline-block;font-weight: 600;vertical-align: top;">Failure Reason :</p>
+                                                                    <p style="font-size: 16px;color: #333;width: 70%;display: inline-block;">{!relatedTo.SML__Failed_Reason__c}</p>
+                                                                </div>
+                                                                <div>
+                                                                     <c:CMNotificationTemplate FailureReason="{!relatedTo.SML__Failed_Reason__c}"/>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color:#888;;font-size: 16px;">
+                                                                <p style="line-height: 32px;font-size: 16px;padding: 12px 0;">Hope this helps. Happy Messaging to you!</p>
+                                                                <p style="font-size: 16px;margin: 0;">Regards</p>
+                                                                <p style="color: #000;font-size: 16px;line-height: 32px;margin: 0px;">Team SMS-Magic</p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#F4F4F4" align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:700px;margin-bottom: 90px;">
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#525B5F" align="center" style="padding:30px 30px 30px 30px;border-radius:0 0 10px 10px;">
+                                <p style="margin:0"> <a href="https://www.sms-magic.com/docs/salesforce/knowledge-base/failed-campaigns/" style="color: #fff;text-decoration: none;font-size: 16px;">www.sms-magic.com</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

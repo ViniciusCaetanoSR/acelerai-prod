@@ -1,0 +1,33 @@
+<template>
+    <lightning-card icon-name="custom:custom13" title='Exportar Leads'>
+        <div style="margin-left: 3%">
+            <!-- Intro -->
+
+            <div class="slds-m-bottom_medium" style="font-size: 1rem; line-height: 1.5;">
+                <p>Use esta ferramenta para exportar/fazer download de seus leads.</p> 
+                <p>Eles serão salvos em uma planilha (Excel).</p>
+            </div>
+            <br>
+            <br>                       
+            <!-- Guia-->
+            <div class="slds-m-bottom_medium">
+                <h2 class="slds-text-heading_small slds-m-bottom_small">Como fazer download dos leads</h2>
+                <p class="slds-m-bottom_small">Selecione os leads, através da checkbox ao lado do nome, e clique em "Exportar Leads":</p>
+            </div>             
+            <!-- Fim do guia-->            
+        </div>               
+        
+        <template if:true={leadEntries}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={leadEntries}
+                    columns={columns}
+                    onrowselection={handleRowSelection}>
+                </lightning-datatable>
+        </template>
+        <div>
+            <br>
+            <lightning-button variant="brand" label="Exportar para Excel" onclick={handleExport} class="custom-button slds-m-horizontal_small"></lightning-button>
+        </div>            
+    </lightning-card>
+</template>

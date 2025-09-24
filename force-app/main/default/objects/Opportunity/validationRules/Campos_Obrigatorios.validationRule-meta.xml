@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campos_Obrigatorios</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+ISPICKVAL( StageName, &apos;Ganho&apos;),
+ISPICKVAL( StageName, &apos;Perdido&apos;),
+ISPICKVAL( StageName, &apos;Ganho Pagamento Futuro&apos;)
+)
+&amp;&amp;
+OR (
+ISBLANK(PaymentLink_sendingDate__c),
+ISBLANK(CloseDateEstimated__c),
+ISPICKVAL(SaleType__c, &apos;&apos;),
+ISBLANK( Account.CNPJ__c ),
+ISBLANK( Account.CompanyName__c ),
+ISBLANK( Account.SocialMedia_website__c ),
+ISBLANK( Account.Phone ),
+ISPICKVAL(Account.Tipodeintermediador__c, &apos;&apos; )
+)</errorConditionFormula>
+    <errorMessage>Preencha os campos do Componente de Pré-visualização de Campos Obrigatórios</errorMessage>
+</ValidationRule>

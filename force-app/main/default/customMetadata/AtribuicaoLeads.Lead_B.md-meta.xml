@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Lead B</label>
+    <protected>false</protected>
+    <values>
+        <field>IdFila__c</field>
+        <value xsi:type="xsd:string">00GHp000005tzsrMAA</value>
+    </values>
+    <values>
+        <field>Letter__c</field>
+        <value xsi:type="xsd:string">B</value>
+    </values>
+    <values>
+        <field>MaxScoreFinal__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>MaxScoreFinanceiro__c</field>
+        <value xsi:type="xsd:double">849.0</value>
+    </values>
+    <values>
+        <field>MaxScore__c</field>
+        <value xsi:type="xsd:double">75.0</value>
+    </values>
+    <values>
+        <field>MinScoreFinal__c</field>
+        <value xsi:type="xsd:double">2.01</value>
+    </values>
+    <values>
+        <field>MinScoreFinanceiro__c</field>
+        <value xsi:type="xsd:double">700.0</value>
+    </values>
+    <values>
+        <field>MinScore__c</field>
+        <value xsi:type="xsd:double">56.0</value>
+    </values>
+    <values>
+        <field>ValueScoreFin__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>Value__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+</CustomMetadata>

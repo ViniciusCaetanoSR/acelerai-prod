@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pracas_Bonificacao_Midia__c</fullName>
+    <label>Praças Bonificação Mídia</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AC - ACRE</fullName>
+                <default>false</default>
+                <label>AC - ACRE</label>
+            </value>
+            <value>
+                <fullName>AC - CRUZEIRO DO SUL</fullName>
+                <default>false</default>
+                <label>AC - CRUZEIRO DO SUL</label>
+            </value>
+            <value>
+                <fullName>AL - MACEIÓ</fullName>
+                <default>false</default>
+                <label>AL - MACEIÓ</label>
+            </value>
+            <value>
+                <fullName>AM - MANAUS</fullName>
+                <default>false</default>
+                <label>AM - MANAUS</label>
+            </value>
+            <value>
+                <fullName>AM - PARINTINS</fullName>
+                <default>false</default>
+                <label>AM - PARINTINS</label>
+            </value>
+            <value>
+                <fullName>AM - TEFÉ</fullName>
+                <default>false</default>
+                <label>AM - TEFÉ</label>
+            </value>
+            <value>
+                <fullName>AP - MACAPÁ</fullName>
+                <default>false</default>
+                <label>AP - MACAPÁ</label>
+            </value>
+            <value>
+                <fullName>BA - SALVADOR</fullName>
+                <default>false</default>
+                <label>BA - SALVADOR</label>
+            </value>
+            <value>
+                <fullName>CE - CEARÁ - ESTADO</fullName>
+                <default>false</default>
+                <label>CE - CEARÁ - ESTADO</label>
+            </value>
+            <value>
+                <fullName>DF - BRASÍLIA</fullName>
+                <default>false</default>
+                <label>DF - BRASÍLIA</label>
+            </value>
+            <value>
+                <fullName>ES - ESPÍRITO SANTO - ESTADO</fullName>
+                <default>false</default>
+                <label>ES - ESPÍRITO SANTO - ESTADO</label>
+            </value>
+            <value>
+                <fullName>GO - GOIÂNIA</fullName>
+                <default>false</default>
+                <label>GO - GOIÂNIA</label>
+            </value>
+            <value>
+                <fullName>MA - SÃO LUIS</fullName>
+                <default>false</default>
+                <label>MA - SÃO LUIS</label>
+            </value>
+            <value>
+                <fullName>MG - BELO HORIZONTE</fullName>
+                <default>false</default>
+                <label>MG - BELO HORIZONTE</label>
+            </value>
+            <value>
+                <fullName>MG - DIVINÓPOLIS</fullName>
+                <default>false</default>
+                <label>MG - DIVINÓPOLIS</label>
+            </value>
+            <value>
+                <fullName>MG - ITUIUTABA</fullName>
+                <default>false</default>
+                <label>MG - ITUIUTABA</label>
+            </value>
+            <value>
+                <fullName>MG - JUIZ DE FORA</fullName>
+                <default>false</default>
+                <label>MG - JUIZ DE FORA</label>
+            </value>
+            <value>
+                <fullName>MG - MANHUAÇU</fullName>
+                <default>false</default>
+                <label>MG - MANHUAÇU</label>
+            </value>
+            <value>
+                <fullName>MG - VARGINHA</fullName>
+                <default>false</default>
+                <label>MG - VARGINHA</label>
+            </value>
+            <value>
+                <fullName>MS - CAMPO GRANDE</fullName>
+                <default>false</default>
+                <label>MS - CAMPO GRANDE</label>
+            </value>
+            <value>
+                <fullName>MT - ALTA FLORESTA</fullName>
+                <default>false</default>
+                <label>MT - ALTA FLORESTA</label>
+            </value>
+            <value>
+                <fullName>MT - BARRA DOS GARÇAS</fullName>
+                <default>false</default>
+                <label>MT - BARRA DOS GARÇAS</label>
+            </value>
+            <value>
+                <fullName>MT - CÁCERES</fullName>
+                <default>false</default>
+                <label>MT - CÁCERES</label>
+            </value>
+            <value>
+                <fullName>MT - CAMPO VERDE</fullName>
+                <default>false</default>
+                <label>MT - CAMPO VERDE</label>
+            </value>
+            <value>
+                <fullName>MT - COLÍDER</fullName>
+                <default>false</default>
+                <label>MT - COLÍDER</label>
+            </value>
+            <value>
+                <fullName>MT - CUIABÁ</fullName>
+                <default>false</default>
+                <label>MT - CUIABÁ</label>
+            </value>
+            <value>
+                <fullName>MT - MATUPÁ</fullName>
+                <default>false</default>
+                <label>MT - MATUPÁ</label>
+            </value>
+            <value>
+                <fullName>MT - NOVA MUTUM</fullName>
+                <default>false</default>
+                <label>MT - NOVA MUTUM</label>
+            </value>
+            <value>
+                <fullName>MT - PONTES E LACERDA</fullName>
+                <default>false</default>
+                <label>MT - PONTES E LACERDA</label>
+            </value>
+            <value>
+                <fullName>MT - RONDONÓPOLIS</fullName>
+                <default>false</default>
+                <label>MT - RONDONÓPOLIS</label>
+            </value>
+            <value>
+                <fullName>MT - SÃO LOURENÇO</fullName>
+                <default>false</default>
+                <label>MT - SÃO LOURENÇO</label>
+            </value>
+            <value>
+                <fullName>MT - SINOP</fullName>
+                <default>false</default>
+                <label>MT - SINOP</label>
+            </value>
+            <value>
+                <fullName>MT - SORRISO</fullName>
+                <default>false</default>
+                <label>MT - SORRISO</label>
+            </value>
+            <value>
+                <fullName>MT - TANGARÁ</fullName>
+                <default>false</default>
+                <label>MT - TANGARÁ</label>
+            </value>
+            <value>
+                <fullName>PA - ABAETETUBA</fullName>
+                <default>false</default>
+                <label>PA - ABAETETUBA</label>
+            </value>
+            <value>
+                <fullName>PA - ALTAMIRA</fullName>
+                <default>false</default>
+                <label>PA - ALTAMIRA</label>
+            </value>
+            <value>
+                <fullName>PA - BELÉM</fullName>
+                <default>false</default>
+                <label>PA - BELÉM</label>
+            </value>
+            <value>
+                <fullName>PA - BRAGANÇA</fullName>
+                <default>false</default>
+                <label>PA - BRAGANÇA</label>
+            </value>
+            <value>
+                <fullName>PA - CAPANEMA</fullName>
+                <default>false</default>
+                <label>PA - CAPANEMA</label>
+            </value>
+            <value>
+                <fullName>PA - CASTANHAL</fullName>
+                <default>false</default>
+                <label>PA - CASTANHAL</label>
+            </value>
+            <value>
+                <fullName>PA - ITAITUBA</fullName>
+                <default>false</default>
+                <label>PA - ITAITUBA</label>
+            </value>
+            <value>
+                <fullName>PA - JURUTI</fullName>
+                <default>false</default>
+                <label>PA - JURUTI</label>
+            </value>
+            <value>
+                <fullName>PA - MARABÁ</fullName>
+                <default>false</default>
+                <label>PA - MARABÁ</label>
+            </value>
+            <value>
+                <fullName>PA - MOJUÍ DOS CAMPOS</fullName>
+                <default>false</default>
+                <label>PA - MOJUÍ DOS CAMPOS</label>
+            </value>
+            <value>
+                <fullName>PA - ÓBIDOS</fullName>
+                <default>false</default>
+                <label>PA - ÓBIDOS</label>
+            </value>
+            <value>
+                <fullName>PA - ORIXIMINÁ</fullName>
+                <default>false</default>
+                <label>PA - ORIXIMINÁ</label>
+            </value>
+            <value>
+                <fullName>PA - PARAGOMINAS</fullName>
+                <default>false</default>
+                <label>PA - PARAGOMINAS</label>
+            </value>
+            <value>
+                <fullName>PA - REDENÇÃO</fullName>
+                <default>false</default>
+                <label>PA - REDENÇÃO</label>
+            </value>
+            <value>
+                <fullName>PA - SALINÓPOLIS</fullName>
+                <default>false</default>
+                <label>PA - SALINÓPOLIS</label>
+            </value>
+            <value>
+                <fullName>PA - SANTARÉM</fullName>
+                <default>false</default>
+                <label>PA - SANTARÉM</label>
+            </value>
+            <value>
+                <fullName>PA - TAILANDIA</fullName>
+                <default>false</default>
+                <label>PA - TAILANDIA</label>
+            </value>
+            <value>
+                <fullName>PA - TERRA SANTA</fullName>
+                <default>false</default>
+                <label>PA - TERRA SANTA</label>
+            </value>
+            <value>
+                <fullName>PA - TUCURUÍ</fullName>
+                <default>false</default>
+                <label>PA - TUCURUÍ</label>
+            </value>
+            <value>
+                <fullName>PB - CAMPINA GRANDE</fullName>
+                <default>false</default>
+                <label>PB - CAMPINA GRANDE</label>
+            </value>
+            <value>
+                <fullName>PB - JOÃO PESSOA</fullName>
+                <default>false</default>
+                <label>PB - JOÃO PESSOA</label>
+            </value>
+            <value>
+                <fullName>PE - CARUARU</fullName>
+                <default>false</default>
+                <label>PE - CARUARU</label>
+            </value>
+            <value>
+                <fullName>PE - RECIFE</fullName>
+                <default>false</default>
+                <label>PE - RECIFE</label>
+            </value>
+            <value>
+                <fullName>PI - TERESINA</fullName>
+                <default>false</default>
+                <label>PI - TERESINA</label>
+            </value>
+            <value>
+                <fullName>PR - CURITIBA</fullName>
+                <default>false</default>
+                <label>PR - CURITIBA</label>
+            </value>
+            <value>
+                <fullName>PR - FOZ DO IGUAÇU</fullName>
+                <default>false</default>
+                <label>PR - FOZ DO IGUAÇU</label>
+            </value>
+            <value>
+                <fullName>PR - LONDRINA</fullName>
+                <default>false</default>
+                <label>PR - LONDRINA</label>
+            </value>
+            <value>
+                <fullName>PR - MARINGÁ</fullName>
+                <default>false</default>
+                <label>PR - MARINGÁ</label>
+            </value>
+            <value>
+                <fullName>PR - PONTA GROSSA</fullName>
+                <default>false</default>
+                <label>PR - PONTA GROSSA</label>
+            </value>
+            <value>
+                <fullName>RJ - NOVA FRIBURGO</fullName>
+                <default>false</default>
+                <label>RJ - NOVA FRIBURGO</label>
+            </value>
+            <value>
+                <fullName>RJ - RIO DE JANEIRO</fullName>
+                <default>false</default>
+                <label>RJ - RIO DE JANEIRO</label>
+            </value>
+            <value>
+                <fullName>RN - NATAL</fullName>
+                <default>false</default>
+                <label>RN - NATAL</label>
+            </value>
+            <value>
+                <fullName>RO - ARIQUEMES</fullName>
+                <default>false</default>
+                <label>RO - ARIQUEMES</label>
+            </value>
+            <value>
+                <fullName>RO - CACOAL</fullName>
+                <default>false</default>
+                <label>RO - CACOAL</label>
+            </value>
+            <value>
+                <fullName>RO - JI-PARANÁ</fullName>
+                <default>false</default>
+                <label>RO - JI-PARANÁ</label>
+            </value>
+            <value>
+                <fullName>RO - PIMENTA BUENO</fullName>
+                <default>false</default>
+                <label>RO - PIMENTA BUENO</label>
+            </value>
+            <value>
+                <fullName>RO - PORTO VELHO</fullName>
+                <default>false</default>
+                <label>RO - PORTO VELHO</label>
+            </value>
+            <value>
+                <fullName>RO - ROLIM DE MOURA</fullName>
+                <default>false</default>
+                <label>RO - ROLIM DE MOURA</label>
+            </value>
+            <value>
+                <fullName>RO - VILHENA</fullName>
+                <default>false</default>
+                <label>RO - VILHENA</label>
+            </value>
+            <value>
+                <fullName>RR - BOA VISTA</fullName>
+                <default>false</default>
+                <label>RR - BOA VISTA</label>
+            </value>
+            <value>
+                <fullName>RS - PORTO ALEGRE</fullName>
+                <default>false</default>
+                <label>RS - PORTO ALEGRE</label>
+            </value>
+            <value>
+                <fullName>SC - SANTA CATARINA - ESTADO</fullName>
+                <default>false</default>
+                <label>SC - SANTA CATARINA - ESTADO</label>
+            </value>
+            <value>
+                <fullName>SP - ARAÇATUBA</fullName>
+                <default>false</default>
+                <label>SP - ARAÇATUBA</label>
+            </value>
+            <value>
+                <fullName>SP - JAÚ</fullName>
+                <default>false</default>
+                <label>SP - JAÚ</label>
+            </value>
+            <value>
+                <fullName>SP - RIBEIRÃO PRETO</fullName>
+                <default>false</default>
+                <label>SP - RIBEIRÃO PRETO</label>
+            </value>
+            <value>
+                <fullName>SP - SANTOS</fullName>
+                <default>false</default>
+                <label>SP - SANTOS</label>
+            </value>
+            <value>
+                <fullName>SP - SÃO JOSÉ DOS CAMPOS</fullName>
+                <default>false</default>
+                <label>SP - SÃO JOSÉ DOS CAMPOS</label>
+            </value>
+            <value>
+                <fullName>SP - SÃO PAULO</fullName>
+                <default>false</default>
+                <label>SP - SÃO PAULO</label>
+            </value>
+            <value>
+                <fullName>SP - SOROCABA</fullName>
+                <default>false</default>
+                <label>SP - SOROCABA</label>
+            </value>
+            <value>
+                <fullName>TO - ARAGUAINA</fullName>
+                <default>false</default>
+                <label>TO - ARAGUAINA</label>
+            </value>
+            <value>
+                <fullName>TO - GURUPI</fullName>
+                <default>false</default>
+                <label>TO - GURUPI</label>
+            </value>
+            <value>
+                <fullName>TO - IMPERATRIZ</fullName>
+                <default>false</default>
+                <label>TO - IMPERATRIZ</label>
+            </value>
+            <value>
+                <fullName>TO - PALMAS</fullName>
+                <default>false</default>
+                <label>TO - PALMAS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

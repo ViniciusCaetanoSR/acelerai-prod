@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>opps_sem_proposta</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Telefone1__c</columns>
+    <columns>Emaill__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Novo_Tipo__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>LastModifiedDate__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Cota_es_na_oportunidade__c</columns>
+    <columns>Valor_m_dio_cota_es__c</columns>
+    <columns>Data_mais_recente_de_proposta__c</columns>
+    <columns>Proposta_v_lida__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Cota_es_na_oportunidade__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Venda Futura,Ganho,Ganho Pagamento Futuro,Perdido,Ganho RD</value>
+    </filters>
+    <filters>
+        <field>Media__c</field>
+        <operation>notEqual</operation>
+        <value>sbt</value>
+    </filters>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <filters>
+        <field>Novo_Tipo__c</field>
+        <operation>notEqual</operation>
+        <value>Renovação/Upsell base RD</value>
+    </filters>
+    <label>[VAREJO] Oportunidades sem proposta</label>
+</ListView>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pol_tica_Comercial__c</fullName>
+    <label>Política Comercial</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Preço normal</fullName>
+                <default>false</default>
+                <label>Preço normal</label>
+            </value>
+            <value>
+                <fullName>Pack de cidades (P0, P01 e P02)</fullName>
+                <default>false</default>
+                <label>Pack de cidades (P0, P01 e P02)</label>
+            </value>
+            <value>
+                <fullName>P0, P01, P02 com 50% de desconto</fullName>
+                <default>false</default>
+                <label>P0, P01, P02 com 50% de desconto</label>
+            </value>
+            <value>
+                <fullName>70% de desconto</fullName>
+                <default>false</default>
+                <label>70% de desconto</label>
+            </value>
+            <value>
+                <fullName>25% off - bônus sobre total</fullName>
+                <default>false</default>
+                <label>25% off - bônus sobre total</label>
+            </value>
+            <value>
+                <fullName>35% off - bônus sobre total</fullName>
+                <default>false</default>
+                <label>35% off - bônus sobre total</label>
+            </value>
+            <value>
+                <fullName>50% off - bônus sobre total</fullName>
+                <default>false</default>
+                <label>50% off - bônus sobre total</label>
+            </value>
+            <value>
+                <fullName>50% de desconto</fullName>
+                <default>false</default>
+                <label>50% de desconto</label>
+            </value>
+            <value>
+                <fullName>40% de desconto</fullName>
+                <default>false</default>
+                <label>40% de desconto</label>
+            </value>
+            <value>
+                <fullName>30% de desconto</fullName>
+                <default>false</default>
+                <label>30% de desconto</label>
+            </value>
+            <value>
+                <fullName>Bônus de R$ 10k</fullName>
+                <default>false</default>
+                <label>Bônus de R$ 10k</label>
+            </value>
+            <value>
+                <fullName>Casting e Comunicadores</fullName>
+                <default>false</default>
+                <label>Casting e Comunicadores</label>
+            </value>
+            <value>
+                <fullName>Estrela da Semana</fullName>
+                <default>false</default>
+                <label>Estrela da Semana</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

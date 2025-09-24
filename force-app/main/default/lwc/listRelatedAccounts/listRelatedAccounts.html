@@ -1,0 +1,58 @@
+<template>
+<!-- Cabeçalho -->
+    <article class="slds-card">
+        
+        <div class="slds-card__header slds-grid custom-card">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <!-- icone -->    
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="account">
+                        <lightning-icon icon-name="standard:account" size="small" alternative-text="Account" title="Account"></lightning-icon>
+                       
+                        <span class="slds-assistive-text">account</span>
+                    </span>
+                </div>
+                
+            <!-- título -->
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a href="#" class="slds-card__header-link slds-truncate" title={title}>
+                            <span>{title}</span>
+                        </a>
+                    </h2>
+                </div>
+
+            </header>
+        </div>
+
+    <!-- Corpo do Card -->
+        <div class="slds-card__body slds-card__body_inner">
+            <template if:true={hasAccounts}>
+                <div class="slds-m-around_medium">
+                    <template for:each={relatedAccounts} for:item="account">
+                        <div key={account.Id} class="slds-grid slds-gutters slds-p-vertical_small">
+                                
+                            <div class="slds-col slds-size_1-of-12 slds-align_absolute-center">
+                                <lightning-icon icon-name="standard:account" size="medium" alternative-text={title}></lightning-icon>
+                            </div>
+                            
+                            <!-- Informações da Conta -->
+                            <div class="slds-col slds-size_11-of-12 slds-align-middle">
+                                <p><a href="#" data-id={account.Id} onclick={handleNavigate}>{account.Name}</a></p>
+                                <p>Phone: {account.Phone}</p>
+                                <p>Account Owner: <a href="#" data-id={account.Owner.Name} onclick={handleNavigate}> {account.Owner.Name} </a></p>
+                                <p>CNPJ: {account.CNPJ__c}</p>
+                            </div>
+
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:false={hasAccounts}>
+                <div class="slds-col slds-size_11-of-12 slds-align-middle">
+                    <p> Não foram encontradas contas relacionadas </p>
+                </div>
+            </template>
+            </div>
+    </article>
+</template>

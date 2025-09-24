@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>comisaao_dobro__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Esses leads são elegíveis para a comissão em dobro, ação feita em 14/09/2024 para a Blitz do projeto SBT</description>
+    <label>Elegível comissão em dobro</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

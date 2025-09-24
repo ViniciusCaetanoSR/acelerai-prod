@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integracao_Lead_SGC__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Integracao Lead SGC - integração SF - SGC</description>
+    <label>Integracao Lead SGC</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

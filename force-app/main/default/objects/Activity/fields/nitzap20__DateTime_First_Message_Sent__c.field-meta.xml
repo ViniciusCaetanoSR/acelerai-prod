@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>nitzap20__DateTime_First_Message_Sent__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Nitzap Date Time First Message Sent</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

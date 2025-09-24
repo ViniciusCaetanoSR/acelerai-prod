@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Faixa_de_Dias_Ultima_Atividade_c__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (  	Quantidade_Dias_Ultima_Atividade_c__c  = 999999, &apos;9999 dias 🟥&apos;, 
+if ( 	Quantidade_Dias_Ultima_Atividade_c__c &gt;= 0 &amp;&amp; 	Quantidade_Dias_Ultima_Atividade_c__c &lt;= 30 , &apos;&lt; 30 dias 🟩&apos;, 
+if ( 	Quantidade_Dias_Ultima_Atividade_c__c &gt;= 31 &amp;&amp; 	Quantidade_Dias_Ultima_Atividade_c__c &lt;= 90 , &apos;&lt; 90 dias 🟨&apos;, 
+if ( 	Quantidade_Dias_Ultima_Atividade_c__c &gt;= 91, &apos;+ 90 dias 🟧&apos;, &apos;Agendado  🟦&apos;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Faixa_de_Dias_Ultima_Atividade__c</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

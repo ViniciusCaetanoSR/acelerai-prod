@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valor_Total_Neg_Fechada__c</fullName>
+    <label>Valor Total Neg Fechada</label>
+    <summarizedField>Quote.TotalAmount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Quote.ExpirationDate</field>
+        <operation>greaterThan</operation>
+        <value>1/1/2024</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Quote.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

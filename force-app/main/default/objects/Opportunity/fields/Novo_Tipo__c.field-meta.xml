@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Novo_Tipo__c</fullName>
+    <description>Tipo - mapeamento Lead para Oportunidade</description>
+    <label>Novo Tipo</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+                <label>Existing Business</label>
+            </value>
+            <value>
+                <fullName>Reprospecção</fullName>
+                <default>false</default>
+                <label>Reprospecção</label>
+            </value>
+            <value>
+                <fullName>Negociação Futura</fullName>
+                <default>false</default>
+                <label>Negociação Futura</label>
+            </value>
+            <value>
+                <fullName>Redistribuição</fullName>
+                <default>false</default>
+                <label>Redistribuição</label>
+            </value>
+            <value>
+                <fullName>Repescagem</fullName>
+                <default>false</default>
+                <label>Repescagem</label>
+            </value>
+            <value>
+                <fullName>QRCode</fullName>
+                <default>false</default>
+                <label>QRCode</label>
+            </value>
+            <value>
+                <fullName>Blitz - Black Friday 2024</fullName>
+                <default>false</default>
+                <label>Blitz - Black Friday 2024</label>
+            </value>
+            <value>
+                <fullName>Renovação/Upsell base RD</fullName>
+                <default>false</default>
+                <label>Renovação/Upsell base RD</label>
+            </value>
+            <value>
+                <fullName>Repescagem - tentativas de contato</fullName>
+                <default>false</default>
+                <label>Repescagem - tentativas de contato</label>
+            </value>
+            <value>
+                <fullName>New Business</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Business</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

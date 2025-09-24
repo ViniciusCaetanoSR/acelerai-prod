@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Pronto! Foi dada a largada e você começou a Acelerar!" recipientType="Contact" relatedToType="Lead">
+<messaging:plainTextEmailBody >
+Nós do Aceleraí, estamos muito animados de ter sua empresa conosco dando este grande passo na sua estratégia de Marketing!
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

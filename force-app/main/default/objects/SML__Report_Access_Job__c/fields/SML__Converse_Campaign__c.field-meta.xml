@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SML__Converse_Campaign__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Converse Campaign</label>
+    <referenceTo>SML__Converse_Campaign__c</referenceTo>
+    <relationshipLabel>Reports_Access_Job</relationshipLabel>
+    <relationshipName>Reports_Access_Job</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

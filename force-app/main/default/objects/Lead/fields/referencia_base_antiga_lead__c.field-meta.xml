@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>referencia_base_antiga_lead__c</fullName>
+    <label>Referência base antiga</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Antigo sem contato e tentativa de contato</fullName>
+                <default>false</default>
+                <label>Antigo sem contato e tentativa de contato</label>
+            </value>
+            <value>
+                <fullName>Base Inativa</fullName>
+                <default>false</default>
+                <label>Base Inativa</label>
+            </value>
+            <value>
+                <fullName>Base lead ativa RD</fullName>
+                <default>false</default>
+                <label>Base lead ativa RD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

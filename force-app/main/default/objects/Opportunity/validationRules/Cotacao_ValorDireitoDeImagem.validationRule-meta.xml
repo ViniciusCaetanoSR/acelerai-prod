@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cotacao_ValorDireitoDeImagem</fullName>
+    <active>false</active>
+    <description>Torna o campo &quot;Valor de Direito de imagem&quot;, de Cotação, obrigatório a partirdo estágio &quot;Em Negociação&quot;.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(StageName, &quot;Em Negociação&quot;),
+ISBLANK(SyncedQuote.ImageRightsValue__c)
+)</errorConditionFormula>
+    <errorMessage>Preencha o campo &quot;Valor do direito de imagem&quot; no objeto Cotação quando chegar na etapa &quot;Em negociação&quot;.</errorMessage>
+</ValidationRule>

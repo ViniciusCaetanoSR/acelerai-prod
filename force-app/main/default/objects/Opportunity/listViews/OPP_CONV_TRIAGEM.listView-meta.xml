@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OPP_CONV_TRIAGEM</fullName>
+    <booleanFilter>1 AND 4 AND 5 AND 6 AND (2 OR 3)</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>Hor_rio_m_ximo_para_contato__c</columns>
+    <columns>UsuarioConversao__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Aprovado</value>
+    </filters>
+    <filters>
+        <field>UsuarioConversao__c</field>
+        <operation>equals</operation>
+        <value>Ronaldo Santos</value>
+    </filters>
+    <filters>
+        <field>UsuarioConversao__c</field>
+        <operation>equals</operation>
+        <value>Isabela Peraira</value>
+    </filters>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <filters>
+        <field>Media__c</field>
+        <operation>notEqual</operation>
+        <value>sbt</value>
+    </filters>
+    <filters>
+        <field>Novo_Tipo__c</field>
+        <operation>notEqual</operation>
+        <value>Renovação/Upsell base RD</value>
+    </filters>
+    <label>[VAREJO] TRIAGEM</label>
+</ListView>

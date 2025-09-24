@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Redistribuicao</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Telefone1__c</columns>
+    <columns>CreatedDate__c</columns>
+    <columns>LastModifiedDate__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Valor_m_dio_cota_es__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Redistribuição</value>
+    </filters>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <filters>
+        <field>Media__c</field>
+        <operation>notEqual</operation>
+        <value>sbt</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Ganho,Ganho Pagamento Futuro,Perdido</value>
+    </filters>
+    <label>[VAREJO] Redistribuição</label>
+</ListView>

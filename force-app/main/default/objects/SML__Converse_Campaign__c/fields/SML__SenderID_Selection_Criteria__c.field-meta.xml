@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SML__SenderID_Selection_Criteria__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field contains the value of the sender ID selction criteria. The value can be: Record Owner, Current User, etc.</description>
+    <externalId>false</externalId>
+    <label>SenderID Selection Criteria</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Auto</fullName>
+                <default>false</default>
+                <label>Auto</label>
+            </value>
+            <value>
+                <fullName>Current User&apos;s SenderID</fullName>
+                <default>false</default>
+                <label>Current User&apos;s SenderID</label>
+            </value>
+            <value>
+                <fullName>Record Owner&apos;s SenderID</fullName>
+                <default>false</default>
+                <label>Record Owner&apos;s SenderID</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

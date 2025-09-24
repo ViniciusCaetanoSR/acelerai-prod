@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SML__Campaign_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Campaign Type</description>
+    <externalId>false</externalId>
+    <label>Campaign Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Converse Apps</fullName>
+                <default>false</default>
+                <label>Converse Apps</label>
+            </value>
+            <value>
+                <fullName>Templates</fullName>
+                <default>false</default>
+                <label>Templates</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

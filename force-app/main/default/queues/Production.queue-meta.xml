@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Produção</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>Backoffice</publicGroup>
+            <publicGroup>Diretor_Comercial</publicGroup>
+            <publicGroup>MediaTeam</publicGroup>
+            <publicGroup>Ferrari_Imola</publicGroup>
+            <publicGroup>Ferrari_Monza</publicGroup>
+            <publicGroup>Mclaren_Interlagos</publicGroup>
+            <publicGroup>Mclaren_Le_Mans</publicGroup>
+            <publicGroup>Mercedes_Indian_polis</publicGroup>
+            <publicGroup>Mercedes_Siverstone</publicGroup>
+            <publicGroup>Redbull_Monaco</publicGroup>
+            <publicGroup>Redbull_Suzuka</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

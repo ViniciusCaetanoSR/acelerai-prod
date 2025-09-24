@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acc_Tamanho</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(StageName, &quot;Negociação Fechada&quot;) &amp;&amp; ISBLANK(Account.Tamanho__c)</errorConditionFormula>
+    <errorMessage>Preencha o campo Tamanho&quot; no objeto Conta quando chegar na etapa &quot;Negociação Fechada&quot;.</errorMessage>
+</ValidationRule>

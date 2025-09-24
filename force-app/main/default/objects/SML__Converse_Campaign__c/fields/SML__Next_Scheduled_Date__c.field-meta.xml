@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SML__Next_Scheduled_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>To store the next scheduled date for the scheduled and recurring scheduled campaigns.</description>
+    <externalId>false</externalId>
+    <label>Next Scheduled Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,1 @@
+<html><head></head><body>Olá,<br /><br />Nós nos adiantamos e fechamos seu caso nº {{{Case.CaseNumber}}}.<br /><br />Para reabrir o caso, responda a este email.<br /><br />Obrigado,<br /><br />Atendimento ao cliente de {{{Organization.Name}}}</body></html>

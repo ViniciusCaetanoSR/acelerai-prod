@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAREJO_SEM_TAREFAS</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Telefone1__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>LastModifiedDate__c</columns>
+    <columns>Hor_rio_m_ximo_para_contato__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.LAST_ACTIVITY</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Novo_Tipo__c</field>
+        <operation>notEqual</operation>
+        <value>Reprospecção</value>
+    </filters>
+    <label>[VAREJO] Oportunidades sem tarefas</label>
+</ListView>

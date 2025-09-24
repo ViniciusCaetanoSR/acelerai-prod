@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>leadScoring__Rule_field_operator_are_valid</fullName>
+    <active>true</active>
+    <description>Checks that the rule has a valid field &amp; operator</description>
+    <errorConditionFormula>ISNULL(leadScoring__Field_Name__c)  ||leadScoring__Field_Name__c==&apos;&apos; || ISNULL(text(leadScoring__Operator__c )) || ISNULL(text(leadScoring__Type__c)) || ISNULL(leadScoring__Value__c)  || leadScoring__Value__c==&apos;&apos;</errorConditionFormula>
+    <errorMessage>You must select a field, operator, and value before saving.  Blank or null values are not supported as valid values.</errorMessage>
+</ValidationRule>

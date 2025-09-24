@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cotacao_ParcelasDePagamento_Obrigatorio</fullName>
+    <active>false</active>
+    <description>Torna o campo &quot;Parcelas de pagamento&quot; a partir de &quot;Negociação Fechada&quot;</description>
+    <errorConditionFormula>ISPICKVAL(StageName, &apos;Negociação Fechada&apos;) &amp;&amp;
+ ISPICKVAL(SyncedQuote.PaymentsInstallments__c, &apos;&apos;)</errorConditionFormula>
+    <errorMessage>Preencha o campo &quot;Parcelas de pagamento&quot; no objeto Cotação quando chegar na etapa &quot;Negociação Fechada&quot;.</errorMessage>
+</ValidationRule>

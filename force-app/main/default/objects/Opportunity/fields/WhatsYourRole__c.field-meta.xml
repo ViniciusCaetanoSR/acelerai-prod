@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WhatsYourRole__c</fullName>
+    <label>Qual seu cargo?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fundador/Sócio</fullName>
+                <default>false</default>
+                <label>Fundador/Sócio</label>
+            </value>
+            <value>
+                <fullName>Diretor</fullName>
+                <default>false</default>
+                <label>Diretor</label>
+            </value>
+            <value>
+                <fullName>Gerente</fullName>
+                <default>false</default>
+                <label>Gerente</label>
+            </value>
+            <value>
+                <fullName>Coordenador</fullName>
+                <default>false</default>
+                <label>Coordenador</label>
+            </value>
+            <value>
+                <fullName>Analista</fullName>
+                <default>false</default>
+                <label>Analista</label>
+            </value>
+            <value>
+                <fullName>Estagiário</fullName>
+                <default>false</default>
+                <label>Estagiário</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

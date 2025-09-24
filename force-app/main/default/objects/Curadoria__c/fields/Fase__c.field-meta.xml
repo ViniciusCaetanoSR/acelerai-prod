@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fase__c</fullName>
+    <label>Fase</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Oportunidade aberta varejo</fullName>
+                <default>false</default>
+                <label>Oportunidade aberta varejo</label>
+            </value>
+            <value>
+                <fullName>Novo</fullName>
+                <default>true</default>
+                <label>Novo</label>
+            </value>
+            <value>
+                <fullName>Pré-checagem</fullName>
+                <default>false</default>
+                <label>Pré-checagem</label>
+            </value>
+            <value>
+                <fullName>Concluido</fullName>
+                <default>false</default>
+                <label>Concluído</label>
+            </value>
+            <value>
+                <fullName>Troca de celebridade</fullName>
+                <default>false</default>
+                <label>Troca de celebridade</label>
+            </value>
+            <value>
+                <fullName>Cancelado</fullName>
+                <default>false</default>
+                <label>Cancelado</label>
+            </value>
+            <value>
+                <fullName>Perdido varejo</fullName>
+                <default>false</default>
+                <label>Perdido varejo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

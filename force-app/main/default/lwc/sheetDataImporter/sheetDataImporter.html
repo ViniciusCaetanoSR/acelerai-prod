@@ -1,0 +1,87 @@
+<template>
+    <lightning-card icon-name="custom:custom13" title='Importar Leads'>
+        <div style="margin-left: 3%">
+            <!-- Intro -->
+            <div class="slds-m-bottom_medium" style="font-size: 1rem; line-height: 1.5;">
+                <p>Use esta ferramenta para importar e salvar seus leads a partir de planilhas (Excel, Google Sheets ou CSV).</p> 
+                <p>Assim, você pode adicionar vários leads de uma só vez.</p>
+            </div>
+            <br>
+            <br>
+            <!-- Guia-->
+            <div class="slds-m-bottom_medium">
+                <h2 class="slds-text-heading_small slds-m-bottom_small">Como preparar seu arquivo</h2>
+                <p class="slds-m-bottom_small">Seu arquivo deve conter as seguintes colunas:</p>
+                
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="width: 60%; margin: 0 auto;">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João</td>
+                            <td>joao@exemplo.com</td>
+                            <td>(11) 99999-9999</td>
+                        </tr>
+                        <tr>
+                            <td>Maria</td>
+                            <td>maria@exemplo.com</td>
+                            <td>(21) 98888-8888</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p class="slds-m-top_small">Você também pode baixar este arquivo de exemplo para usar como modelo:
+                    <lightning-button variant="brand" label="Arquivo de exemplo" title="Baixar arquivo de exemplo" 
+                                     onclick={downloadArquivoExemplo} class="custom-button slds-m-left_x-small">
+                    </lightning-button>
+                </p>
+                <!-- <p class="slds-m-top_small">Você também pode baixar <a href={arquivoExemploUrl} download="arquivo_exemplo_leads.xlsx" target="_blank" style="color:#c34f67; text-decoration: underline;">este arquivo de exemplo</a> para usar como modelo.
+                </p>-->
+
+            </div>             
+            <!-- Fim do guia-->
+            <br>
+            <br>
+            <div class="slds-form-element__row slds-align_absolute-center">
+                <div if:true={librariesInitialized}>
+                    <p>Escolha o seu arquivo </p>
+                    <lightning-input 
+                        type="file" 
+                        label="O formato do arquivo precisa ser CSV, XLSX ou XLS"
+                        accept=".csv, .xlsx, .xls"
+                        onchange={handleFileUpload}>
+                    </lightning-input>
+                </div>
+                <div if:false={librariesInitialized}>
+                    <div>Carregando bibliotecas...</div>
+                </div>
+            </div>
+
+            <div if:true={isLoaded} class="slds-align_absolute-center">
+                <div class="holder">
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </div>
+            </div>
+            
+            <div if:true={error} class="error">
+                {error}
+            </div><br />
+
+            <div if:true={data}>
+                <button class="slds-button slds-button_brand" onclick={importData} style="margin: 2%">
+                    Importar dados
+                </button>
+
+                <div style="max-height: 300px; width: 100%" class="slds-col slds-size_12-of-12 slds-scrollable_y">
+                    <lightning-datatable columns={columns} data={data} hide-checkbox-column="true" key-field="id">
+                    </lightning-datatable>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

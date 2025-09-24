@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cotacao_FormaDePagamento_Obrigatorio</fullName>
+    <active>false</active>
+    <description>Torna o campo &quot;Forma de pagamento&quot; obrigatório a partir da etapa &quot;Negociação Fechada&quot;</description>
+    <errorConditionFormula>ISPICKVAL(StageName, &apos;Negociação Fechada&apos;) &amp;&amp;
+ISPICKVAL(SyncedQuote.PaymentMethod__c, &apos;&apos;)</errorConditionFormula>
+    <errorMessage>Preencha o campo &quot;Forma de pagamento&quot; no objeto Cotação quando chegar na etapa &quot;Negociação fechada&quot;.</errorMessage>
+</ValidationRule>

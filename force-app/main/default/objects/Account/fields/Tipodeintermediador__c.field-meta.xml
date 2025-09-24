@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipodeintermediador__c</fullName>
+    <label>Tipo de intermediador</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agência</fullName>
+                <default>false</default>
+                <label>Agência</label>
+            </value>
+            <value>
+                <fullName>Assinante Aceleraí Agências</fullName>
+                <default>false</default>
+                <label>Assinante Aceleraí Agências</label>
+            </value>
+            <value>
+                <fullName>Cliente Final</fullName>
+                <default>false</default>
+                <label>Cliente Final</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

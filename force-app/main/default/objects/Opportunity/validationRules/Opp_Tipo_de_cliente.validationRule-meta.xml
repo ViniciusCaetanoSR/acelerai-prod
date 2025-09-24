@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Tipo_de_cliente</fullName>
+    <active>true</active>
+    <description>Em negociação fechada, preencher &quot;tipo de cliente&quot;</description>
+    <errorConditionFormula>AND(
+NOT(OR(ISPICKVAL(StageName, &quot;Aprovado&quot;), ISPICKVAL(StageName, &quot;Qualificação&quot;), ISPICKVAL(StageName, &quot;Proposta Enviada&quot;), ISPICKVAL(StageName, &quot;Em Negociação&quot;), ISPICKVAL(StageName, &quot;Reunião Marcada&quot;), ISPICKVAL(StageName, &quot;Perdido&quot;))), ISPICKVAL(Tipo_de_cliente__c, &quot;&quot; ),
+RecordType.DeveloperName == &quot;Varejo&quot;
+)</errorConditionFormula>
+    <errorMessage>Preencher campo &quot;Tipo de Cliente&quot;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temperatura_da_negociacao__c</fullName>
+    <label>Temperatura da negociação</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quente</fullName>
+                <default>false</default>
+                <label>Quente</label>
+            </value>
+            <value>
+                <fullName>Morno</fullName>
+                <default>false</default>
+                <label>Morno</label>
+            </value>
+            <value>
+                <fullName>Frio</fullName>
+                <default>false</default>
+                <label>Frio</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

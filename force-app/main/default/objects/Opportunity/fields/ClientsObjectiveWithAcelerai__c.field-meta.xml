@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClientsObjectiveWithAcelerai__c</fullName>
+    <label>Objetivo do Cliente com o Aceleraí</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Campanha Institucional</fullName>
+                <default>false</default>
+                <label>Campanha Institucional</label>
+            </value>
+            <value>
+                <fullName>Campanha Sazonal</fullName>
+                <default>false</default>
+                <label>Campanha Sazonal</label>
+            </value>
+            <value>
+                <fullName>Campanha Promocional</fullName>
+                <default>false</default>
+                <label>Campanha Promocional</label>
+            </value>
+            <value>
+                <fullName>Campanha de Lançamento</fullName>
+                <default>false</default>
+                <label>Campanha de Lançamento</label>
+            </value>
+            <value>
+                <fullName>RD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

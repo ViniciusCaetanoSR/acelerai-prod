@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prodution2</fullName>
+    <active>true</active>
+    <businessProcess>Case Support Process</businessProcess>
+    <label>Produção 2</label>
+    <picklistValues>
+        <picklist>ClientsObjectiveWithAcelerai__c</picklist>
+        <values>
+            <fullName>Campanha Institucional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campanha Promocional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campanha Sazonal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campanha de Lançamento</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CompanyAge__c</picklist>
+        <values>
+            <fullName>1 a 3 anos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 a 5 anos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 5 anos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Menos de 1 ano</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HaveCurrentlyAgency__c</picklist>
+        <values>
+            <fullName>Minha empresa é uma Agência</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>JaFoiAnunciante__c</picklist>
+        <values>
+            <fullName>Não</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Sim%2C apenas mídia off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim%2C apenas mídia on</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sim%2C os dois</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MonthlyInvestmentMedia_Content__c</picklist>
+        <values>
+            <fullName>Entre 11k - 30k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entre 1k - 3k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entre 4k - 10k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 30k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Não Invisto</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NumberEmployees__c</picklist>
+        <values>
+            <fullName>01 - 05</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05 - 20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 - 50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 - 100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 100</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QuandoPretendeAnunciar__c</picklist>
+        <values>
+            <fullName>Entre 1 e 3 meses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imediatamente</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mais de 3 meses</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>StateYourCompany__c</picklist>
+        <values>
+            <fullName>AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Veiculacao__c</picklist>
+        <values>
+            <fullName>Mídia On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rádio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WhatsYourRole__c</picklist>
+        <values>
+            <fullName>Analista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coordenador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diretor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estagiário</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundador%2FSócio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gerente</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

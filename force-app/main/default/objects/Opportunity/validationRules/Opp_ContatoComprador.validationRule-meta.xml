@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_ContatoComprador</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(OR(ISPICKVAL(StageName, &quot;Aprovado&quot;), ISPICKVAL(StageName, &quot;Qualificação&quot;), ISPICKVAL(StageName, &quot;Proposta Enviada&quot;), ISPICKVAL(StageName, &quot;Em Negociação&quot;), ISPICKVAL(StageName, &quot;Reunião Marcada&quot;), ISPICKVAL(StageName, &quot;Perdido&quot;))),
+ISBLANK( ContatoComprador__c ),
+RecordType.DeveloperName == &quot;Varejo&quot;
+)</errorConditionFormula>
+    <errorMessage>Preencha o campo Contato Comprador.</errorMessage>
+</ValidationRule>

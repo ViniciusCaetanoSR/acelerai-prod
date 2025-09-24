@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Excecao</fullName>
+    <columns>NAME</columns>
+    <columns>RelatedRecord__c</columns>
+    <columns>ExceptionType__c</columns>
+    <columns>Cause__c</columns>
+    <columns>ErrorMessage__c</columns>
+    <columns>MethodName__c</columns>
+    <columns>User__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Log__c.Exception</value>
+    </filters>
+    <label>Logs de Exceção</label>
+</ListView>

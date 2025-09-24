@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssignmentGroup__c</fullName>
+    <label>Grupo de Atribuição</label>
+    <referenceTo>AssignmentGroup__c</referenceTo>
+    <relationshipLabel>Membros do Grupo de Atribuição</relationshipLabel>
+    <relationshipName>AssignmentGroupMembers</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

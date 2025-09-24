@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_CotacaoPagamentoFuturo</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(StageName, &apos;Ganho Pagamento Futuro&apos;) &amp;&amp; CotacaoPagamentoFuturo__c &lt;= 0 &amp;&amp; RecordType.DeveloperName == &apos;Varejo&apos;</errorConditionFormula>
+    <errorMessage>É necessário ter uma cotação com pagamento futuro marcado para colocar esse estágio</errorMessage>
+</ValidationRule>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reprospec_o</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Emaill__c</columns>
+    <columns>Telefone1__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>LastModifiedDate__c</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>Valor_m_dio_cota_es__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>LinkOportunidadeSGCdesativado__c</columns>
+    <columns>Link_Oportunidade_SGC__c</columns>
+    <columns>Media__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Varejo</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Venda Futura,Venda Fechada,Ganho,Ganho Pagamento Futuro,Perdido,Ganho RD</value>
+    </filters>
+    <filters>
+        <field>Novo_Tipo__c</field>
+        <operation>equals</operation>
+        <value>Reprospecção</value>
+    </filters>
+    <label>[VAREJO] Reprospecção</label>
+</ListView>

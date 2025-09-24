@@ -1,0 +1,3 @@
+Ola, {!User.FirstName} {!User.LastName}!
+
+O Lead {!Lead.FirstName} {!Lead.LastName}, Id: {!Lead.Id}, Segmento: {!Lead.Segmento__c} foi atribuído a você!

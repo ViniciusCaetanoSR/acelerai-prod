@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cotacao_ValorPecas</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(StageName, &apos;Em negociação&apos;) &amp;&amp; ISBLANK(SyncedQuote.PieceAmount__c)</errorConditionFormula>
+    <errorMessage>Preencha o campo &quot;Valor das peças&quot; no objeto Cotação quando chegar na etapa &quot;Em negociação&quot;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LinkOportunidadeSGCdesativado__c</fullName>
+    <description>Campo carrega URL da oportunidade do SGC</description>
+    <inlineHelpText>Campo carrega URL da oportunidade do SGC</inlineHelpText>
+    <label>Link Oportunidade Original SGC</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

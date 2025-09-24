@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompletedCalls__c</fullName>
+    <description>Chamadas feitas para cada lead, oportunidade e geral</description>
+    <label>Chamadas feitas</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chamada 1</fullName>
+                <default>false</default>
+                <label>Chamada 1</label>
+            </value>
+            <value>
+                <fullName>Chamada 2</fullName>
+                <default>false</default>
+                <label>Chamada 2</label>
+            </value>
+            <value>
+                <fullName>Chamada 3</fullName>
+                <default>false</default>
+                <label>Chamada 3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

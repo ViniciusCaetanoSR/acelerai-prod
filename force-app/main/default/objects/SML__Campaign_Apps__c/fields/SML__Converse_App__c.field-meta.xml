@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SML__Converse_App__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Converse App Reference</description>
+    <externalId>false</externalId>
+    <label>Converse App</label>
+    <referenceTo>smagicinteract__Converse_App__c</referenceTo>
+    <relationshipLabel>Campaign Apps</relationshipLabel>
+    <relationshipName>Campaign_Apps</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>M_dias_Solicita_o_de_Recarga</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Emaill__c</columns>
+    <columns>Telefone1__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>Valor_m_dio_cota_es__c</columns>
+    <columns>Vendedor_Varejo__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Funnel__c</field>
+        <operation>equals</operation>
+        <value>Mídias Vendas</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Perdido</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Solicitação Recarga</value>
+    </filters>
+    <filters>
+        <field>Tipo_de_cliente__c</field>
+        <operation>notEqual</operation>
+        <value>Agência</value>
+    </filters>
+    <label>Mídias - Solicitação de Recarga</label>
+    <sharedTo>
+        <group>MediaTeam</group>
+    </sharedTo>
+</ListView>
