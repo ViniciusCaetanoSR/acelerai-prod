@@ -105,9 +105,6 @@ public class EventService {
             }
         }
 
-        //Adicionar os "Name(WhoId)" aos attendees, para receberem email:
-        //List<Id> whoId = [SELECT Id, WhoId FROM Event WHERE  Id = :evt.Id LIMIT 1];
-
         if (!attendeesEmails.isEmpty()) {
             try {
                 OrgWideEmailAddress owea = [SELECT Id, Address  FROM OrgWideEmailAddress LIMIT 1];
@@ -122,10 +119,8 @@ public class EventService {
                 emailBody += 'Evento: ' + evt.Subject + '\n';
                 emailBody += 'Início: ' + evt.StartDateTime.format('dd/MM/yyyy HH:mm') + '\n';
                 emailBody += 'Término: ' + evt.EndDateTime.format('dd/MM/yyyy HH:mm') + '\n\n';
-                //emailBody += 'Localização: ' + evt.TeamsJoinURL__c + '\n\n';
                 emailBody += 'Link da reunião Teams: ' + evt.Description + '\n\n';
 
-                //mail.setPlainTextBody(emailBody);
 
                 String htmlBody = '<p>Você tem um evento agendado:</p>';
                 htmlBody += '<p><strong>Evento:</strong> ' + evt.Subject + '<br>';
@@ -262,11 +257,6 @@ public class EventService {
 
         Boolean queuedJob = false;
         for (Event e : newEvents) {
-            if(e.AgendaPessoal__c){
-            	System.debug('É agenda pessoal');
-                return false;
-            }
-            
             if (e.ProcessedByTeams__c == false) {
                 System.enqueueJob(new TeamsEventQueueable(e.Id));
                 queuedJob = true;
@@ -278,7 +268,7 @@ public class EventService {
 
     public static Boolean handleUpdateTeamsEvent(List<Event> newEvents, Map<Id, Event> oldEventsMap){
         System.debug('~~ START> handleUpdateTeamsEvent: ' + ' newEvents.size(): ' + newEvents.size());
-        
+
         if (newEvents.isEmpty()){
             System.debug('~~ START> handleUpdateTeamsEvent, newEvents vazia: ' + newEvents.size());
             return false;
@@ -286,24 +276,17 @@ public class EventService {
 
         Boolean queuedJob = false;
         for (Event e : newEvents) {
-            if(e.AgendaPessoal__c){
-            	System.debug('É agenda pessoal');
-                return false;
-            }
-            
             Event oldEv = oldEventsMap.get(e.Id);
             if (e.Subject != oldEv.Subject || e.StartDateTime != oldEv.StartDateTime || e.EndDateTime != oldEv.EndDateTime) {
-                if (e.ProcessedByTeams__c == false) {
-                    System.enqueueJob(new TeamsEventQueueable(e.Id));
-                    queuedJob = true;
-                    System.debug('~~ END> handleUpdateTeamsEvent enfileirou o job: ' + e.Subject + ' para ATUALIZAR o Evento no Teams'); 
-                }
+                System.enqueueJob(new TeamsEventQueueable(e.Id));
+                queuedJob = true;
+                System.debug('~~ END> handleUpdateTeamsEvent enfileirou o job: ' + e.Subject + ' para ATUALIZAR o Evento no Teams');
             }
         }
         return queuedJob;
     }
 
-    public static Boolean handleDeleteTeamsEvents(List<Event> oldEvents) {        
+    public static Boolean handleDeleteTeamsEvents(List<Event> oldEvents) {
         System.debug('~~ START> handleDeleteTeamsEvents, oldEvents:' + oldEvents);
 
         if (oldEvents.isEmpty()) {
@@ -327,11 +310,6 @@ public class EventService {
 
         Boolean hasCallout = false;
         for (Event oldE : oldEvents) {
-            if(oldE.AgendaPessoal__c){
-            	System.debug('Era agenda pessoal');
-                return false;
-            }
-            
             if (oldE.TeamsEventId__c != null) {
                 User owner = ownersById.get(oldE.OwnerId);
                 if (owner != null && owner.HasTeamsConsent__c) {
@@ -353,11 +331,11 @@ public class EventService {
         return hasCallout;
     }
 
-    public static Boolean handleFinishedEvent_TeamsIntegration() {        
+    public static Boolean handleFinishedEvent_TeamsIntegration() {
         if (throwTestException) {
             throw new AuraHandledException('Erro simulado para teste');
         }
-        
+
         Boolean queuedJobs;
         try {
             List<Event> eventsToProcess = [

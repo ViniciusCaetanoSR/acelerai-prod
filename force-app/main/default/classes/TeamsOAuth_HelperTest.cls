@@ -32,10 +32,30 @@ private class TeamsOAuth_HelperTest {
     @isTest
     static void testHandleTokenExpirationAlwaysTrueInTest() {
         User u = createUser();
+        u.TeamsAccessToken__c = 'blabla-access-token';
+        u.TeamsRefreshToken__c = 'blabla-refresh-token'; 
+        u.TeamsTokenExpiresAt__c = System.now().addHours(1).formatGmt('yyyy-MM-dd HH:mm:ss'); // Token VÁLIDO
+        update u;
+
+        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator());
+        
+        Test.startTest();
         Boolean result = TeamsOAuth_Helper.handleTokenExpiration(u);
-        System.assertEquals(true, result, 'Em contexto de teste sempre retorna true');
+        Test.stopTest();
+
+        System.assertEquals(true, result, 'Nao deu certo... não renovou');
     }
 
+    public class MockHttpResponseGenerator implements HttpCalloutMock {
+        public HTTPResponse respond(HTTPRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setHeader('Content-Type', 'application/json');
+            res.setBody('{"access_token":"fake-access-token","refresh_token":"fake-refresh-token","expires_in":3600}');
+            res.setStatusCode(200);
+            return res;
+        }
+    }
+    
     private static User createUser() {
         Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
         User u = new User(

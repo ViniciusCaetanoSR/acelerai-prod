@@ -1,6 +1,6 @@
 public with sharing class TeamsOAuth_Helper {
 
-        public static Boolean isTokenExpired(User user) {
+    public static Boolean isTokenExpired(User user) {
         if (String.isBlank(user.TeamsTokenExpiresAt__c)) {
             System.debug('~~ O campo TeamsTokenExpiresAt__c está nulo');
             return true;
@@ -14,17 +14,14 @@ public with sharing class TeamsOAuth_Helper {
         }
     }
 
-    public static Boolean handleTokenExpiration(User owner){ //true: valid-token; false: invalid
-        if (Test.isRunningTest()) {
-            return true;
-        }
-
+    public static Boolean handleTokenExpiration(User owner){ //true: valid-token; false: invalid  
         if(owner == null){
             System.debug('~~ O handleTokenExpiration nao recebeu o ownerId/user');
             return false;
         }
 
-        Boolean isExpired = isTokenExpired(owner);
+        Boolean isExpired = isTokenExpired(owner);       
+        
         if (!isExpired){
             return true; //--TOKEN VÁLIDO--
 
@@ -51,12 +48,18 @@ public with sharing class TeamsOAuth_Helper {
                 owner.TeamsTokenExpiresAt__c = expiresAt.formatGmt('yyyy-MM-dd HH:mm:ss');
                 update owner;
 
+                if (Test.isRunningTest()) {                    
+                   	return true;                   
+        		}
                 System.debug('Token renovado para usuário: ' + owner.Id + '. Nova expiração: ' + owner.TeamsTokenExpiresAt__c);
                 return true;
+                
             } catch (Exception e){
                 System.debug('Erro ao tentar renovar token: ' + e.getMessage());
                 return false;
             }
         }
     }   
+
+
 }

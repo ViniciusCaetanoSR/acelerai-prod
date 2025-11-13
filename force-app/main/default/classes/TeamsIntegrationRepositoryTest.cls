@@ -50,7 +50,7 @@ private class TeamsIntegrationRepositoryTest {
             Pol_tica_Comercial__c = '1 mês a mais de direito de imagem',
             QuandoPretendeAnunciar__c = 'Imediatamente',
             SaleType__c = 'Cliente novo',
-            //Tipo_de_cliente__c = clientType, 
+            //Tipo_de_cliente__c = clientType,
             Veiculacao__c = 'Mídia On',
             WhatsYourInstagram__c = '@_teste',
             WhatsYourRole__c = 'Gerente',
@@ -172,11 +172,14 @@ private class TeamsIntegrationRepositoryTest {
         Opportunity opp = createOpportunity(a.Id);
         Event ev = createEvent(u.Id, opp.Id);
         List<String> presentersEmails = new List<String>();
+        List<String> displayNames = new List<String>();
         presentersEmails.add('barbara@acelerai.com.br');
         presentersEmails.add('iago@acelerai.com.br');
+        displayNames.add('Barbara');
+        displayNames.add('Iago');
 
         Test.startTest();
-        TeamsIntegrationRepository.updateTeamsPresenters(ev, true, presentersEmails);
+        TeamsIntegrationRepository.updateTeamsPresenters(ev, true, presentersEmails, displayNames);
         Test.stopTest();
 
         Event reloaded = [SELECT TeamsShowStatus__c, TeamsPresentersEmails__c FROM Event WHERE Id = :ev.Id];

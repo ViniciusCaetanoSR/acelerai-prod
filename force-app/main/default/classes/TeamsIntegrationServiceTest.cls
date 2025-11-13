@@ -84,7 +84,8 @@ private class TeamsIntegrationServiceTest {
             LocaleSidKey = 'pt_BR',
             ProfileId = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1].Id,
             TimeZoneSidKey = 'America/Sao_Paulo',
-            UserName = 'testeuser@aceleraibr.com'
+            UserName = 'testeuser@aceleraibr.com',
+            TeamsCalendarId__c = 'fake-calendar-id'
         );
         insert u;
 
@@ -107,7 +108,7 @@ private class TeamsIntegrationServiceTest {
 
         Test.startTest();
         TeamsIntegrationService.allowHttpCallout = false;
-        TeamsIntegrationService.createTeamsEvent(e, 'fake-access-token');
+        TeamsIntegrationService.createTeamsEventInCalendar(e, 'fake-access-token', u, u.TeamsCalendarId__c);
         Test.stopTest();
 
         Event updatedEvent = [SELECT Description, TeamsMeetingId__c, TeamsEventId__c, ProcessedByTeams__c FROM Event WHERE Id = :e.Id];
@@ -118,11 +119,26 @@ private class TeamsIntegrationServiceTest {
 
     @isTest
     static void testUpdateTeamsEvent() {
+        User u = new User(
+            Alias = 'tuser',
+            LastName = 'Blueble',
+            Email = 'teste@aceleraibr.com',
+            EmailEncodingKey = 'UTF-8',
+            LanguageLocaleKey = 'pt_BR',
+            LocaleSidKey = 'pt_BR',
+            ProfileId = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1].Id,
+            TimeZoneSidKey = 'America/Sao_Paulo',
+            UserName = 'testeuser@aceleraibr.com',
+            TeamsCalendarId__c = 'fake-calendar-id'
+        );
+        insert u;
+
         Event e = new Event(
             Subject = 'Lamar Atualizada',
             StartDateTime = System.now().addDays(1),
             EndDateTime = System.now().addDays(1).addHours(1),
-            TeamsEventId__c = 'evt123'
+            TeamsEventId__c = 'evt123',
+            OwnerId = u.Id
         );
         insert e;
 

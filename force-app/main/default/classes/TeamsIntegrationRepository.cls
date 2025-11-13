@@ -1,5 +1,15 @@
 public with sharing class TeamsIntegrationRepository {
 
+    public static void saveCalendarIdToUser(Id userId, String calendarId) {
+        try {
+            User userToUpdate = new User(Id = userId,TeamsCalendarId__c = calendarId);
+            update userToUpdate;
+            System.debug('~~ CalendarId salvo no User: ' + calendarId);
+        } catch (Exception e) {
+            System.debug('~~ Erro ao salvar calendarId no User: ' + e.getMessage());
+        }
+    }
+
     public static Event updateEventsFieldWithTeamsData(Event event, String descricao, String joinUrl, String meetingId, String eventId) {
         try {
             event.Description = descricao;
@@ -64,11 +74,11 @@ public with sharing class TeamsIntegrationRepository {
         }
     }
 
-    //antigo updateTeamsGuestAttended
-    public static void updateTeamsPresenters(Event event, Boolean guestAtended, List<String> presentersEmails) {
+    public static void updateTeamsPresenters(Event event, Boolean guestAtended, List<String> presentersEmails, List<String> presentersNames) {
         try {
             event.TeamsShowStatus__c = guestAtended;
             event.TeamsPresentersEmails__c = String.join(presentersEmails, '; ');
+            event.TeamsAttendanceName__c = String.join(presentersNames, '; ');
             update event;
             System.debug('Sucesso na TeamsIntegrationRepository. Método: updateTeamsPresenters. Event.TeamsShowStatus__c: ' +  event.TeamsShowStatus__c);
         } catch (Exception e) {
@@ -93,7 +103,7 @@ public with sharing class TeamsIntegrationRepository {
                 transcriptionHistory = new TeamsTranscriptionHistory__c();
                 transcriptionHistory.Name = 'Transcrição do evento ' + eventWithTranscriptId.Subject;
                 transcriptionHistory.RelatedOpp__c = eventWithTranscriptId.WhatId;
-                transcriptionHistory.RelatedEvent__c = 'https://aceleraibr.lightning.force.com/lightning/r/Event/' + eventWithTranscriptId.Id + '/view';
+                transcriptionHistory.RelatedEvent__c = 'https://aceleraibr--devsr.sandbox.lightning.force.com/lightning/r/Event/' + eventWithTranscriptId.Id + '/view';
 
                 insert transcriptionHistory;
                 System.debug('TranscriptionHistory criado com ID: ' + transcriptionHistory.Id);

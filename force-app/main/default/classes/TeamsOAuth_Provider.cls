@@ -61,6 +61,7 @@ public without sharing class TeamsOAuth_Provider {
         if (String.isBlank(user.TeamsRefreshToken__c)) {
             System.debug('~~ Usuário sem refresh-token.');
             user.addError('Não foi possível sincronizar com o Teams: usuário sem refresh token. Dê o consentimento ao Teams.');
+            return null;
         }
 
         try{

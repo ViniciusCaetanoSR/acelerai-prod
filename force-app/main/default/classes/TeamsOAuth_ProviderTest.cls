@@ -5,7 +5,7 @@ private class TeamsOAuth_ProviderTest {
     static void testGetAccessTokenByUser_UserNotFound() {
         TeamsOAuth_Provider provider = new TeamsOAuth_Provider();
         TeamsOAuth_Response res = provider.getAccessTokenByUser('005000000000000'); // Id inexistente
-        
+
         System.assertNotEquals(null, res, 'Deveria retornar um objeto, mesmo sem usuário');
     }
 
@@ -14,7 +14,7 @@ private class TeamsOAuth_ProviderTest {
         User u = createUser(null);
         TeamsOAuth_Provider provider = new TeamsOAuth_Provider();
         TeamsOAuth_Response res = provider.getAccessTokenByUser(u.Id);
-        
+
         System.assertNotEquals(null, res, 'Deveria retornar objeto vazio, pq não tem consent code');
     }
 
@@ -32,24 +32,29 @@ private class TeamsOAuth_ProviderTest {
         System.assertNotEquals(null, res, 'Em teste sempre retorna objeto válido');
     }
 
-    // @isTest
-    // static void testRefreshToken_WithRefreshToken() {
-    //     User u = createUser('consentCode');
-    //     u.TeamsRefreshToken__c = 'refresh123';
-    //     update u;
+    @isTest
+    static void testRefreshToken_WithRefreshToken() {
+        User u = createUser('consentCode');
+        u.TeamsRefreshToken__c = 'refresh123';
+        update u;
 
-    //     Test.setMock(HttpCalloutMock.class, new MockRefreshToken());
+        Test.setMock(HttpCalloutMock.class, new MockRefreshToken());
 
-    //     Map<String, Object> result = TeamsOAuth_Provider.refreshToken(u);
-    //     //System.assertNotEquals(null, result, 'Deveria retornar um mapa válido');
-    //     System.assertEquals('newAccess', (String)result.get('access_token'));
-    // }
+        Test.startTest();
+        Map<String, Object> result = TeamsOAuth_Provider.refreshToken(u);
+        Test.stopTest();
+
+        System.assertNotEquals(null, result, 'Deveria retornar um mapa válido');
+        System.assertEquals('newAccess', (String)result.get('access_token'));
+    }
+
 
     private class MockRefreshToken implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest req) {
             HttpResponse res = new HttpResponse();
             res.setStatusCode(200);
             res.setBody('{"access_token":"newAccess","refresh_token":"newRefresh","expires_in":3600}');
+
             return res;
         }
     }

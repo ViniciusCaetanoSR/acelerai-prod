@@ -265,8 +265,11 @@ public class EventServiceTest {
             TimeZoneSidKey = 'America/Sao_Paulo',
             UserName = 'testeuser@aceleraibr.com',
             TeamsAccessToken__c = 'fakeAccessToken',
+            TeamsRefreshToken__c = 'refresh-token-falso',
+            TeamsCalendarId__c = 'calendario-falso',
             TeamsUserId__c = 'fakeTeamsUserId',
-            HasTeamsConsent__c = true
+            HasTeamsConsent__c = true,
+            TeamsTokenExpiresAt__c = System.now().addHours(-1).formatGmt('yyyy-MM-dd HH:mm:ss') 
         );
         insert u;
 
@@ -283,10 +286,39 @@ public class EventServiceTest {
         );        
         insert ev;
 
+        Test.setMock(HttpCalloutMock.class, new TeamsOAuthMock(true));
+
         Test.startTest();
             Boolean result = EventService.handleDeleteTeamsEvents(new List<Event>{ev});
         Test.stopTest();
 
         System.assertEquals(true, result, 'Deveria retornar true pois houve callout');
+    }
+
+    public class TeamsOAuthMock implements HttpCalloutMock {
+        private Boolean success;
+        
+        public TeamsOAuthMock(Boolean success) {
+            this.success = success;
+        }
+        
+        public HTTPResponse respond(HTTPRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setHeader('Content-Type', 'application/json');
+            
+            if (success) {
+                res.setStatusCode(200);
+                res.setBody('{' +
+                    '"access_token": "new-fake-access-token",' +
+                    '"refresh_token": "new-fake-refresh-token",' +
+                    '"expires_in": 3600' +
+                '}');
+            } else {
+                res.setStatusCode(400);
+                res.setBody('{"error":"invalid_grant"}');
+            }
+            
+            return res;
+        }
     }
 }

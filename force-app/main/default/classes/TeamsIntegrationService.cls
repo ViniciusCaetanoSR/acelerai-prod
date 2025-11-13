@@ -2,12 +2,22 @@ public with sharing class TeamsIntegrationService {
     @testVisible
     private static Boolean allowHttpCallout = true;
 
-    public static void createTeamsEvent(Event event, String accessToken) {
+    /**
+     * Cria evento no calendário dedicado 'Salesforce' do Teams/Outlook
+     * para evitar duplicação pelo Einstein Activity Capture
+     */
+    public static void createTeamsEventInCalendar(Event event, String accessToken, User owner, String calendarId) {
         System.debug('~~ START [CREATE TeamsEvent]> ' + event + ' | ' + accessToken);
         String teamsMeetingId;
         String teamsEventId;
 
-        try {            
+        try {
+            if (String.isBlank(calendarId)) {
+                System.debug('~~ ERRO: Não foi possível obter calendarId. Abortando criação.');
+                return;
+            }
+
+            System.debug('~~ Usando calendarId: ' + calendarId);
             List<EventRelation> relations = [
                 SELECT RelationId, EventId, IsInvitee
                 FROM EventRelation
@@ -110,7 +120,9 @@ public with sharing class TeamsIntegrationService {
             System.debug('~~ createTeamsEvent, jsonBody: ' + jsonBody);
 
             HttpRequest req = new HttpRequest();
-            req.setEndpoint('https://graph.microsoft.com/v1.0/me/events');
+            String endpoint = 'https://graph.microsoft.com/v1.0/me/calendars/' + calendarId + '/events';
+            req.setEndpoint(endpoint);
+            System.debug('~~ Endpoint para criação: ' + endpoint);
             req.setMethod('POST');
             req.setHeader('Authorization', 'Bearer ' + accessToken);
             req.setHeader('Content-Type', 'application/json');
@@ -195,13 +207,21 @@ public with sharing class TeamsIntegrationService {
         } catch (Exception e){
             System.debug('~~ END [CREATE TeamsEvent EXCEPTION]> ' + e.getMessage());
         }
-    }   
+    }
 
     public static void updateTeamsEvent(Event event, String accessToken) {
         System.debug('~~ START < updateTeamsEvent');
         if (String.isBlank(event.TeamsEventId__c)) {
             System.debug('~~ END < Evento não possui TeamsEventId__c, não será atualizado no Teams');
             return;
+        }
+
+        User owner = [SELECT Id, TeamsCalendarId__c FROM User WHERE Id = :event.OwnerId LIMIT 1];
+        String calendarId = owner.TeamsCalendarId__c;
+
+        if (String.isBlank(calendarId)) {
+            System.debug('~~ AVISO: User não possui TeamsCalendarId__c. Tentando atualizar via endpoint padrão.');
+            calendarId = null; // Usar endpoint padrão como fallback
         }
 
         Map<String, Object> eventBody = new Map<String, Object>{
@@ -217,7 +237,14 @@ public with sharing class TeamsIntegrationService {
         };
 
         HttpRequest req = new HttpRequest();
-        req.setEndpoint('https://graph.microsoft.com/v1.0/me/events/' + event.TeamsEventId__c);
+        String endpoint;
+        if (String.isNotBlank(calendarId)) {
+            endpoint = 'https://graph.microsoft.com/v1.0/me/calendars/' + calendarId + '/events/' + event.TeamsEventId__c;
+        } else {
+            endpoint = 'https://graph.microsoft.com/v1.0/me/events/' + event.TeamsEventId__c;
+        }
+        req.setEndpoint(endpoint);
+        System.debug('~~ Endpoint para update: ' + endpoint);
         req.setMethod('PATCH');
         req.setHeader('Authorization', 'Bearer ' + accessToken);
         req.setHeader('Content-Type', 'application/json');
@@ -247,7 +274,7 @@ public with sharing class TeamsIntegrationService {
     }
 
     public static void deleteTeamsEvent(String teamsEventId, String accessToken) {
-        try {          
+        try {
             if (String.isBlank(accessToken) || String.isBlank(teamsEventId)) {
                 System.debug('Sem accesstoken ou teamsEventId no deleteTeamsEvent(). O accessToken é: ' + accessToken + ' | O teamsEventId é: ' + teamsEventId);
                 return;
@@ -373,12 +400,6 @@ public with sharing class TeamsIntegrationService {
                         if (event.TeamsOnlineMeetingId__c == null || String.isBlank(event.TeamsOnlineMeetingId__c)) {
                             TeamsIntegrationRepository.updateTeamsOnlineMeetingId(event, onlineMeetingId);
                         }
-
-                        /*if (event.TeamsOnlineMeetingId__c != null && !String.isBlank(event.TeamsOnlineMeetingId__c)) {
-                            System.debug('SUCESS atualizou e Chamou a queueable');
-                            System.enqueueJob(new TeamsAttendanceRecordQueueable(event.Id, onlineMeetingId, accessToken));
-                        }*/
-
                     }
                 } else {
                     System.debug('Nenhuma reunião encontrada com essa JoinWebUrl.');
@@ -470,24 +491,36 @@ public with sharing class TeamsIntegrationService {
 
             Boolean guestAttended = false;
             List<String> presentersEmails = new List<String>();
+            List<String> presentersNames = new List<String>();
 
             for (Object rec : attendanceRecords) {
                 Map<String, Object> attendance = (Map<String, Object>) rec;
+                Map<String, Object> identity = (Map<String, Object>) attendance.get('identity');
+
                 String role = (String) attendance.get('role');
                 String emailAddress = (String) attendance.get('emailAddress');
+                String displayNames = identity != null ? (String) identity.get('displayName') : null;
+
 
                 System.debug('Role encontrado: ' + role);
+                System.debug('DisplayNames encontrados: ' + displayNames);
 
-               if (role == 'Presenter' && !String.isBlank(emailAddress)) {
-                    presentersEmails.add(emailAddress);
+               if (role == 'Presenter' && (!String.isBlank(emailAddress) || !String.isBlank(displayNames))) {
+                    if(!String.isBlank(emailAddress)) {
+                        presentersEmails.add(emailAddress);
+                    }
+                    if (!String.isBlank(displayNames)) {
+                        presentersNames.add(displayNames);
+                    }
                     guestAttended = true;
                 }
             }
 
-            if (!presentersEmails.isEmpty() && guestAttended) {
+            if (guestAttended && (!presentersEmails.isEmpty() || !presentersNames.isEmpty())) {
                 System.debug('DEBUG X: guestAttended: ' + guestAttended);
                 System.debug('DEBUG X: presenters encontrados: ' + String.join(presentersEmails, ', '));
-                TeamsIntegrationRepository.updateTeamsPresenters(event, guestAttended, presentersEmails);
+                System.debug('DEBUG X: displayNames encontrados: ' + String.join(presentersNames, ', '));
+                TeamsIntegrationRepository.updateTeamsPresenters(event, guestAttended, presentersEmails, presentersNames);
             }
 
         } else {
@@ -507,7 +540,6 @@ public with sharing class TeamsIntegrationService {
 
         try {
             String url = 'https://graph.microsoft.com/beta/users/' + user.TeamsUserId__c + '/onlineMeetings/' + event.TeamsOnlineMeetingId__c + '/transcripts';
-            //System.debug('url:' + url);
 
             HttpRequest req = new HttpRequest();
             req.setMethod('GET');
@@ -565,7 +597,6 @@ public with sharing class TeamsIntegrationService {
 
         try {
             String url = 'https://graph.microsoft.com/beta/users/' + user.TeamsUserId__c + '/onlineMeetings/' + event.TeamsOnlineMeetingId__c + '/transcripts/' + transcriptionHistory.TeamsTranscriptId__c + '/content';
-            //System.debug('URL de conteúdo da transcrição: ' + url);
 
             HttpRequest req = new HttpRequest();
             req.setMethod('GET');
