@@ -2,7 +2,7 @@
  * @description       :
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             :
- * @last modified on  : 17-09-2025
+ * @last modified on  : 21-05-2025
  * @last modified by  : Vinícius Caetano
  **/
 public without sharing class OpportunityService {
@@ -356,7 +356,14 @@ public without sharing class OpportunityService {
             Date lastDayOfCurrentMonth = firstDayNextMonth.addDays(-1);
             TaskService.TaskEmailResult result;
 
+            Id recordTypeMentoria = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('Mentoria').getRecordTypeId();
+
+
             for (Lead lead : leads) {
+                if (lead.RecordTypeId == recordTypeMentoria) {
+                    continue;
+                }
+
                 //Adicionar Emails do Lead ao Set;
                 leadEmails.add(lead.Email);
             }
@@ -431,8 +438,6 @@ public without sharing class OpportunityService {
             if (!opportunityByLastOppId.isEmpty()) {
                 insert opportunityByLastOppId.values();
             }
-
-            Id recordTypeMentoria = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('Mentoria').getRecordTypeId();
 
             for (Lead currentLead : leads) {
                 // Busca uma oportunidade existente com o email do lead;
@@ -534,8 +539,14 @@ public without sharing class OpportunityService {
             List<Contact> contactToInsert = new List<Contact>();
             TaskService.TaskEmailResult result;
 
+            Id recordTypeMentoria = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('Mentoria').getRecordTypeId();
+
             for (Lead lead : leads) {
                 //Adicionar Emails do Lead ao Set;
+                if (lead.RecordTypeId == recordTypeMentoria) {
+                    continue;
+                }
+
                 leadEmails.add(lead.Email);
             }
 
@@ -749,7 +760,7 @@ public without sharing class OpportunityService {
         CustomerCommunityService.handleAccess(opportunities, oldMapOpp);
     }
 
-    public static void applyNegotiationTemperatureRules(List<Opportunity> opportunities, Map<Id, Opportunity> oldOpportunityMap) {
+     public static void applyNegotiationTemperatureRules(List<Opportunity> opportunities, Map<Id, Opportunity> oldOpportunityMap) {
         for (Opportunity opp : opportunities) {
             Opportunity oldOpp = oldOpportunityMap != null ? oldOpportunityMap.get(opp.Id) : null;
 
@@ -770,12 +781,8 @@ public without sharing class OpportunityService {
         if (oldOpp.Cota_es_na_oportunidade__c == 0 && opp.Cota_es_na_oportunidade__c == 0 && opp.Temperatura_da_negociacao__c != null) {
             opp.addError('Para alterar a Temperatura da Negociação, deve-se ter proposta válida (<7 dias)');
         }
-        if (
-            oldOpp.Temperatura_da_negociacao__c != null &&
-            opp.Proposta_v_lida__c == 'SEM PROPOSTA VÁLIDA' &&
-            opp.Temperatura_da_negociacao__c != oldOpp.Temperatura_da_negociacao__c
-        ) {
-            opp.addError('Para alterar a Temperatura da Negociação, deve-se ter proposta válida (<7 dias)');
+        if (oldOpp.Temperatura_da_negociacao__c != null && opp.Proposta_v_lida__c == 'SEM PROPOSTA VÁLIDA' && opp.Temperatura_da_negociacao__c != oldOpp.Temperatura_da_negociacao__c) {
+           opp.addError('Para alterar a Temperatura da Negociação, deve-se ter proposta válida (<7 dias)');
         }
         if (oldOpp.Temperatura_da_negociacao__c != null && opp.Temperatura_da_negociacao__c == null) {
             opp.addError('Não é possível retirar a seleção de temperatura');

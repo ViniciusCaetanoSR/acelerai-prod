@@ -12,6 +12,8 @@ public with sharing class LeadService {
     }
 
     public void processDuplicateLeads(List<Lead> newLeads) {
+        System.debug('chamou o processDuplicateLeads');
+
         Set<String> newLeadEmails = new Set<String>();
         List<Lead> leadsToDelete = new List<Lead>();
         List<Lead> leadsToUpdate = new List<Lead>();
@@ -24,12 +26,17 @@ public with sharing class LeadService {
 
         try {
             List<Lead> existingLeads = repository.findByEmails(newLeadEmails);
+            System.debug('retornou LeadRepository. existingLeads:' + existingLeads);
+
             existingLeads = validationService.sortLeadsByOpenStatus(existingLeads);
 
             if (!existingLeads.isEmpty()) {
+                System.debug('identificou o lead existente');
+
                 for (Lead newLead : newLeads) {
                     for (Lead existingLead : existingLeads) {
                         if (newLead.Email__c == existingLead.Email__c) {
+                            System.debug('vai chamar o handleDuplicatedLead');
                             validationService.handleDuplicateLead(newLead, existingLead, leadsToDelete, leadsToUpdate);
                             break;
                         }
@@ -71,7 +78,7 @@ public with sharing class LeadService {
         Set<Id> duplicatedLeadsSet = new Set<Id>();
 
         try {
-            List<Lead> duplicatedLeadsList = [SELECT Id, IsDuplicate__c FROM Lead WHERE Id IN :leadsList];
+            List<Lead> duplicatedLeadsList = [SELECT Id, IsDuplicate__c, RecordType.Name FROM Lead WHERE Id IN :leadsList AND RecordType.Name != 'Mentoria'];
 
             if (!duplicatedLeadsList.isEmpty()) {
                 for (Lead lead : duplicatedLeadsList) {

@@ -1,4 +1,4 @@
-trigger EventTrigger on Event (before insert, before update, after insert, after update) {
+trigger EventTrigger on Event (before insert, before update, after insert, after update, after delete) {
 
     if (Trigger.isBefore) {
         if (Trigger.isInsert) {
@@ -6,7 +6,7 @@ trigger EventTrigger on Event (before insert, before update, after insert, after
         }        
         if (Trigger.isUpdate) {
             EventTriggerHandler.onBeforeUpdate(Trigger.new, Trigger.oldMap);
-        }
+        }        
     }
 
     if (Trigger.isAfter) {
@@ -16,5 +16,9 @@ trigger EventTrigger on Event (before insert, before update, after insert, after
         if (Trigger.isUpdate) {   
             EventTriggerHandler.onAfterUpdate(Trigger.new, Trigger.oldMap);
         }
+        if(Trigger.isDelete) {
+            System.debug('isDelete: ' + Trigger.old);
+            EventTriggerHandler.onAfterDelete(Trigger.old);
+        } 
     }
 }

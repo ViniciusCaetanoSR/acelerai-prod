@@ -38,12 +38,21 @@ public with sharing class LeadValidationService {
     }
 
     public void handleDuplicateLead(Lead newLead, Lead existingLead, List<Lead> leadsToDelete, List<Lead> leadsToUpdate) {
+        Id recordTypeMentoria = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('Mentoria').getRecordTypeId();
+
+        if (newLead.RecordTypeId == recordTypeMentoria) {
+            return;   // Pula leads do tipo Mentoria
+        }
+
+        System.debug('chamou o handleDuplicated');
         if (newLead == null || existingLead == null) {
             return;
         }
 
         // 1. O lead existente veio da mesma fonte "Aceleraí Performance" → marcar o lead novo como perdido
         if (existingLead.LeadSource == 'Aceleraí Performance') {
+            System.debug('existingLead.LeadSource: ' + existingLead.LeadSource);
+
             newLead.Status = 'Perdido';
             newLead.Motivo_da_Perda__c = 'Lead Performance Duplicado';
             return; // nada mais a fazer

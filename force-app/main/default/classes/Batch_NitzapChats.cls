@@ -20,29 +20,18 @@ global class Batch_NitzapChats implements Database.Batchable<sObject>, Database.
     }
 
     global class Batch_NitzapChats_Exception extends Exception {}
+    global Map<Id, User> mapUsers;
 
     public List<DataWrapperChat> response = new List<DataWrapperChat>();
 
     public List<SObject> start(Database.BatchableContext BC) {
         nitzap20__NitzapConfigs__c nitzapConfigs = nitzap20__NitzapConfigs__c.getOrgDefaults();
-        User usu;
-
-        try {
-            usu = [
-                SELECT Id, Name, nitzap20__Secret__c, nitzap20__WhatsAppId__c, nitzap20__Connected__c
-                FROM User
-                WHERE nitzap20__Connected__c = true AND IsActive = true
-                LIMIT 1
-            ];
-        } catch (Exception err) {
-            throw new Batch_NitzapChats_Exception('É necessário ter pelo menos um usuário conectado ao nitzap para seguir com essa rotina!');
-        }
 
         HttpRequest reqAuth = new HttpRequest();
         reqAuth.setEndpoint(nitzapConfigs.nitzap20__Url_Base__c + '/whatsapp/login');
         reqAuth.setMethod('POST');
         reqAuth.setHeader('content-type', 'application/json');
-        reqAuth.setBody('{"username": "' + usu.nitzap20__WhatsAppId__c + '", "password": "' + usu.nitzap20__Secret__c + '"}');
+        reqAuth.setBody('{"username": "' + nitzapConfigs.nitzap20__Master_ID__c + '", "password": "' + nitzapConfigs.nitzap20__Master_Secret__c + '"}');
 
         HTTPResponse resAuth = new Http().send(reqAuth);
         DataWrapperAuthResp authResponse = (DataWrapperAuthResp) JSON.deserialize(resAuth.getBody(), DataWrapperAuthResp.class);
@@ -79,10 +68,21 @@ global class Batch_NitzapChats implements Database.Batchable<sObject>, Database.
 
         List<SObject> resultados = new List<SObject>();
         resultados.addAll([
-            SELECT Id, Name, nitzap20__WhatsAppId__c, OwnerId FROM Contact WHERE FinWid__c IN :chaves
+            SELECT Id, Name, nitzap20__WhatsAppId__c, OwnerId, Owner.IsActive, Owner.Id FROM Contact WHERE FinWid__c IN :chaves
         ]);
         resultados.addAll([
-            SELECT Id, Name, nitzap20__WhatsAppId__c, OwnerId FROM Lead WHERE FinWid__c IN :chaves AND IsConverted = FALSE
+            SELECT Id, Name, nitzap20__WhatsAppId__c, OwnerId, Owner.IsActive, Owner.Id FROM Lead WHERE FinWid__c IN :chaves AND IsConverted = FALSE
+        ]);
+
+        Set<Id> idsUsers = new Set<Id>();
+        for (SObject reg : resultados) {
+            idsUsers.add((Id) reg.get('OwnerId'));
+        }
+
+        mapUsers = new Map<Id, User>([
+            SELECT IsActive, Id
+            FROM User
+            WHERE Id IN :idsUsers
         ]);
         return resultados;
     }
@@ -163,6 +163,14 @@ global class Batch_NitzapChats implements Database.Batchable<sObject>, Database.
                 mywhatsidToUserId.put(u.nitzap20__WhatsAppId__c, u.Id);
             }
         }
+        
+        // Mapear chats por secondwhatsappid para facilitar a busca
+        Map<String, DataWrapperChat> chatBySecondWhatsId = new Map<String, DataWrapperChat>();
+        for (DataWrapperChat chat : response) {
+            if (!String.isBlank(chat.secondwhatsappid)) {
+                chatBySecondWhatsId.put(chat.secondwhatsappid, chat);
+            }
+        }
     
         Set<Id> whoIdsParaChecar = new Set<Id>(recsToUpdate.keySet());
         Set<Id> whoAlreadyToday = new Set<Id>();
@@ -191,15 +199,45 @@ global class Batch_NitzapChats implements Database.Batchable<sObject>, Database.
     
             String contactWhatsId = (String) sObj.get('nitzap20__WhatsAppId__c');
             Id ownerId = null;
+            
+            // Buscar o chat correspondente usando lógica de matching melhorada
+            DataWrapperChat matchingChat = null;
             for (DataWrapperChat chat : response) {
-                if (chat.secondwhatsappid != null && chat.secondwhatsappid.contains(contactWhatsId)) {
-                    String chatMyWhatsId = chat.mywhatsid.split('@').get(0);
-                    ownerId = mywhatsidToUserId.get(chatMyWhatsId);
-                    break;
+                if (chat.secondwhatsappid != null && !String.isBlank(contactWhatsId)) {
+                    String secondwhatsappidsplit = chat.secondwhatsappid.split('@').get(0);
+                    String contWithoutPlus = contactWhatsId.replace('+', '');
+                    String secondWithoutPlus = secondwhatsappidsplit.replace('+', '');
+                    
+                    // Aplicar a mesma lógica de matching usada no execute
+                    String biggerPhone = contWithoutPlus.length() >= secondWithoutPlus.length() ? contWithoutPlus : secondWithoutPlus;
+                    String smallerPhone = secondWithoutPlus.length() > contWithoutPlus.length() ? contWithoutPlus : secondWithoutPlus;
+                    
+                    String smallerPhoneEnd = smallerPhone.right(8);
+                    String smallerPhoneStart = smallerPhone.left(smallerPhone.length() - 8).replace('+', '');
+                    String smallerPhoneStart3 = smallerPhone.left(3);
+                    
+                    if (biggerPhone == smallerPhone || (
+                        (smallerPhoneStart3.startsWith('+55') || smallerPhoneStart3.startsWith('55')) &&
+                        biggerPhone.startsWith(smallerPhoneStart) &&
+                        biggerPhone.endsWith(smallerPhoneEnd) &&
+                        biggerPhone.left(biggerPhone.length() - 7).right(1) == '9'
+                    )) {
+                        matchingChat = chat;
+                        break;
+                    }
                 }
             }
+            
+            // Se encontrou o chat, buscar o ownerId baseado no mywhatsid
+            if (matchingChat != null && !String.isBlank(matchingChat.mywhatsid)) {
+                String chatMyWhatsId = matchingChat.mywhatsid.split('@').get(0);
+                ownerId = mywhatsidToUserId.get(chatMyWhatsId);
+            }
+            
+            // Se não encontrou ownerId, usar o owner do registro ou usuário atual
             if (ownerId == null) {
-                ownerId = (sObj.get('OwnerId') != null) ? (Id) sObj.get('OwnerId') : UserInfo.getUserId();
+                User usu = mapUsers.get((Id) sObj.get('OwnerId'));
+                ownerId = (usu != null && usu?.IsActive == true) ? usu.Id : UserInfo.getUserId();
             }
     
             Task baseTask = new Task();
@@ -233,3 +271,4 @@ global class Batch_NitzapChats implements Database.Batchable<sObject>, Database.
 }
 
 // sf project deploy start --metadata ApexClass:Batch_NitzapChats --metadata ApexClass:Batch_NitzapChats_Test -l RunSpecifiedTests -t Batch_NitzapChats_Test -o Connection_Acelerai_Prod
+// sf project deploy start --metadata ApexClass:Batch_NitzapChats --metadata ApexClass:Batch_NitzapChats_Test -l RunSpecifiedTests -t Batch_NitzapChats_Test

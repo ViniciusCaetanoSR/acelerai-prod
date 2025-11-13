@@ -37,20 +37,12 @@ public with sharing class AssignmentGroupMemberService {
 
         try {
             //Grupos sem Campo Mídia preenchido
-            List<AssignmentGroupMember__c> defaultMembers = [
-                SELECT Id, User__c, User__r.Name, NumberRecordsAssigned__c, LastAssignmentDate__c, AssignmentGroup__c, AssignmentGroup__r.Media__c
-                FROM AssignmentGroupMember__c
-                WHERE AssignmentGroup__r.Object__c = 'Lead' AND AssignmentGroup__r.Media__c = NULL
-            ];
+            List<AssignmentGroupMember__c> defaultMembers = AssignmentGroupMemberSelector.selectDefaultMembersLead();
 
             //Grupos com Campo Mídia preenchido
-            List<AssignmentGroupMember__c> mediaMembers = [
-                SELECT Id, User__c, User__r.Name, NumberRecordsAssigned__c, LastAssignmentDate__c, AssignmentGroup__c, AssignmentGroup__r.Media__c
-                FROM AssignmentGroupMember__c
-                WHERE AssignmentGroup__r.Object__c = 'Lead' AND AssignmentGroup__r.Media__c != NULL
-            ];
+            List<AssignmentGroupMember__c> mediaMembers = AssignmentGroupMemberSelector.selectMediaMembersLead();
 
-            List<AssignmentGroup__c> allGroups = [SELECT Id, Media__c, Object__c, Name FROM AssignmentGroup__c WHERE Object__c = 'Lead'];
+            List<AssignmentGroup__c> allGroupsLead = AssignmentGroupMemberSelector.selectAllGroupsOfLeads();
 
             // Consulta feita somente para pegar grupo de atribuição padrão;
             AssignmentGroup__c defaultGroup = [SELECT Id FROM AssignmentGroup__c WHERE Id = :defaultMembers[0].AssignmentGroup__c LIMIT 1];
@@ -58,7 +50,7 @@ public with sharing class AssignmentGroupMemberService {
             for (Lead lead : leads) {
                 Boolean leadAssigned = false;
 
-                for (AssignmentGroup__c ag : allGroups) {
+                for (AssignmentGroup__c ag : allGroupsLead) {
                     if (leadAssigned) {
                         break;
                     }
@@ -83,6 +75,55 @@ public with sharing class AssignmentGroupMemberService {
             }
         } catch (Exception e) {
             LoggerUtility.createLogException(e, null, 'assignmentGroupMemberLead');
+        }
+    }
+
+    public static void distributeLeadsToGroupForConversion(List<Lead> leads) {
+        System.debug('Iniciando atribuição de Leads do tipo Agência Cliente');
+        leadsToUpdateMap.clear();
+        membersToUpdate.clear();
+        Set<Id> leadOwnerIds = new Set<Id>();
+
+        //Membros do grupo Opportunity vendedores Agência
+        List<AssignmentGroupMember__c> groupAgencia = AssignmentGroupMemberSelector.selectMembersGroupAgencia();
+
+        //Membros do grupo Opportunity vendedores Mentoria
+        List<AssignmentGroupMember__c> membersGroupOpportunityMentoria = AssignmentGroupMemberSelector.selectMembersGroupOpportunityMentoria();
+
+        // Grupos de Atribuição do Objeto Opportunity (todos)
+        List<AssignmentGroup__c> allGroups = AssignmentGroupMemberSelector.selectAllGroupsOfOpportunity();
+
+        for (Lead lead : leads) {
+            leadOwnerIds.add(lead.OwnerId);
+        }
+
+        // Usuários com o campo RotearOportunidade__c = true
+        List<User> owners = AssignmentGroupMemberSelector.getUserRotearOportunidadeEqualsTrue(leadOwnerIds);
+
+        for (Lead currentLead : leads) {
+            for (AssignmentGroup__c assignmentGroup : allGroups) {
+                System.debug('Entrou no for final');
+                Set<Id> leadOwnerIdsSet = new Map<Id, User>(owners).keySet();
+                if (currentLead.OwnerId != null && leadOwnerIdsSet.contains(currentLead.OwnerId)) {
+                    System.debug('Entrou no tipo agencia atribuição final');
+                    // Atribuimos para um grupo de Opportunity Agência
+                    assignLeadToMember(currentLead, assignmentGroup, groupAgencia);
+                }
+                if (currentLead.Website__c == 'Mentoria') {
+                    // Atribuimos para um grupo de Opportunity Mentoria
+                    System.debug('Entrou no tipo mentoria atribuição final');
+
+                    assignLeadToMember(currentLead, assignmentGroup, membersGroupOpportunityMentoria);
+                }
+            }
+        }
+
+        if (!leadsToUpdateMap.isEmpty()) {
+            update leadsToUpdateMap.values();
+        }
+
+        if (!membersToUpdate.isEmpty()) {
+            update membersToUpdate.values();
         }
     }
 
